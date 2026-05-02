@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copenhagen Travel Blog</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {S
+      font-family: Georgia, serif;
+      color: #333;
+      background: white;
+    }
+
+    header {
+      height: 128px;
+      background: #4EAA87;
+      display: flex;
+      align-items: center;
+      padding: 0 130px;
+      gap: 120px;
+    }
+
+    .logo {
+      color: #ffd22e;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 0.9;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 90px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 70px auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 70px;
+      margin-bottom: 45px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .subtitle {
+      color: #4EAA87;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      color: #f1a51c;
+      font-size: 48px;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.45;
+      margin-bottom: 32px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 24px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .author {
+      width: 250px;
+      background: #dff3eb;
+      border-radius: 18px;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .author img {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .author h3 {
+      font-size: 15px;
+    }
+
+    .author strong {
+      font-size: 12px;
+    }
+
+    .author p {
+      font-size: 11px;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .video-box {
+      max-width: 880px;
+      height: 430px;
+      margin: 60px auto;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play {
+      width: 100px;
+      height: 100px;
+      border: 8px solid white;
+      border-radius: 50%;
+      color: white;
+      font-size: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 8px;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      background: rgba(255,255,255,0.15);
+    }
+
+    ul {
+      margin-left: 25px;
+      margin-bottom: 35px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .pro-tip {
+      background: #dff3eb;
+      border-radius: 14px;
+      padding: 26px 35px;
+      margin: 70px 30px;
+      position: relative;
+    }
+
+    .label {
+      position: absolute;
+      top: -28px;
+      left: -10px;
+      background: #4EAA87;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transform: rotate(-10deg);
+      font-weight: bold;
+    }
+
+    .pro-tip ol {
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .pro-tip a {
+      color: #4EAA87;
+      font-weight: bold;
+    }
+
+    .share {
+      text-align: center;
+      margin: 70px 0;
+    }
+
+    .share p {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #4EAA87;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 9px 35px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      height: 152px;
+      background: #4EAA87;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .icons {
+      display: flex;
+      gap: 14px;
+      color: #ffd22e;
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 0 30px;
+        gap: 40px;
+      }
+
+      nav {
+        gap: 25px;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .author {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 22px;
+      }
+
+      .video-box {
+        height: 260px;
+      }
+
+      footer {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      Travel<br>
+      <span>Blog</span>
+    </div>
+
+    <nav>
+      <a href="#">Highlights</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="subtitle">A Stylish Scandinavian Escape</p>
+
+        <h1>Copenhagen in 3 Days: Big Experiences, Smart Spending</h1>
+
+        <p>
+          Discover Copenhagen, where historic charm meets modern design,
+          vibrant cycling culture and waterfront living.
+        </p>
+
+        <div class="meta">
+          <span>📅 June 24, 2026</span>
+          <span>📖 Reading time: 4 min</span>
+          <span>📍 Read: 14</span>
+          <span>✈ Shared: 38</span>
+        </div>
+      </div>
+
+      <aside class="author">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Author">
+
+        <h3>Tamara Müller</h3>
+        <strong>Author</strong>
+
+        <p>
+          I've been exploring Europe since 2017, sharing inspiring stories
+          and places for travel lovers.
+        </p>
+      </aside>
+    </section>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
+      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
+    </p>
+
+    <section class="video-box">
+      <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1000" alt="Copenhagen">
+      <div class="play">▶</div>
+    </section>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
+      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada:
+    </p>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.</li>
+      <li>Lorem ipsum dolor sit amet consectetur turpis gravida semper.</li>
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+      <li>Ante in commodo porta scelerisque turpis gravida semper.</li>
+    </ul>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
+      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
+      Egestas a enim vestibulum malesuada.
+    </p>
+
+    <section class="pro-tip">
+      <div class="label">💡 Pro tips</div>
+
+      <ol>
+        <li>
+          Ante in commodo porta scelerisque turpis gravida semper.
+          <a href="#">Useful link.</a>
+        </li>
+        <li>
+          Lorem ipsum dolor sit amet enim vestibulum malesuada.
+          Ante interdum commodo porta scelerisque turpis.
+        </li>
+      </ol>
+    </section>
+
+    <section class="share">
+      <p>
+        Follow me for more content like this,<br>
+        share the article with your friends!
+      </p>
+
+      <button>↗ Share</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© Travel Blog 2026</div>
+
+    <a href="#">Imprint</a>
+    <a href="#">Cookie Preferences</a>
+
+    <div class="icons">
+      <span>♫</span>
+      <span>▶</span>
+      <span>f</span>
+      <span>◎</span>
+      <span>in</span>
+    </div>
+  </footer>
+
+</body>
+</html>
