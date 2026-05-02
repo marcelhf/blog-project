@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    color: #54370D
+}
+
+header {
+    height: 128px;
+    width: 100%;
+    background-color: #4EA487;
+    align-items: center;
+    font-family: "arima", "sans-serif";
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 146px;
+    padding-top: 32px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    gap: 72px;
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 72px;
+    margin: 0;
+}
+
+nav img {
+    height: 72px;
+    width: 72px;
+}
+
+main {
+    padding: 128px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #F8F5EB;
+}
+
+.nav-link:hover {
+    color: #F1C953;
+    cursor: pointer;
+}
+
+.headline-section {
+    display: flex;
+    gap: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.headline-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.headline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.headlines-main h2 {
+    color: #4EA487;
+    font-family: "palanquin";
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0;
+}
+
+h1 {
+    color: #F1C953;
+    font-family: "arima";
+    font-weight: 700;
+    font-size: 64px;
+    margin: 0;
+}
+
+.headlines-main h3 {
+    font-family: "palanquin";
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.headline-subarea {
+    display: flex;
+    gap: 32px;
+    font-family: "palanquin";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.author-description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    align-items: center;
+    flex: 0;
+    min-width: 272px;
+}
+
+.author-name {
+    font-weight: 700;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    ;
+}
+
+.destination-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.destination-section h3 {
+    font-family: "arima";
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.destination-img {
+    width: 300px;
+    height: 440px;
+    transition: all 0.2s ease-out;
+}
+
+.destination-img:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in;
+}
