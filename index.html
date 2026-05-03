@@ -8,18 +8,6 @@
   <link rel="icon" href="img/global/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* CSS-only Slider direkt in index.html, ohne JavaScript */
-    .highlights-slider {
-      position: relative;
-      width: 1200px;
-      max-width: 100%;
-      height: 533px;
-      overflow: hidden;
-      border-radius: 0 100px 0 0;
-      background: #54370D;
-      isolation: isolate;
-    }
-
     /* Page-specific Layout für index.html. Globale Schriftarten/Farben bleiben in css/style.css. */
     /* Box-Sizing, Body, Farben und globale Typografie kommen aus css/style.css. */
     body {
@@ -317,8 +305,13 @@
       display: flex;
       width: 400%;
       height: 100%;
-      transition: transform 250ms ease-in-out;
+      transition: transform 280ms ease-out;
       transform: translateX(0);
+      border-radius: 0 100px 0 0;
+      overflow: hidden;
+      background: transparent;
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .highlights-slider .carousel-slide {
@@ -328,7 +321,6 @@
       height: 100%;
       overflow: hidden;
       border-radius: 0 100px 0 0;
-      background: #54370D;
       background: transparent;
     }
 
@@ -352,12 +344,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-left: 1px solid rgba(255, 255, 255, 0.7);
-      border-right: 1px solid rgba(255, 255, 255, 0.7);
-      z-index: 2;
       background: rgba(255, 255, 255, 0.22);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -372,9 +358,6 @@
     .highlights-slider .carousel-overlay h3 {
       max-width: 833px;
       margin: 0;
-      font-size: 48px;
-      line-height: 1;
-      color: #fff;
       font-family: 'Palanquin Dark', system-ui, sans-serif;
       font-weight: 600;
       font-size: 48px;
@@ -385,9 +368,6 @@
     .highlights-slider .carousel-overlay p {
       max-width: 820px;
       margin: 0;
-      font-size: 28px;
-      line-height: 1.1;
-      color: #fff;
       font-family: 'Palanquin', system-ui, sans-serif;
       font-weight: 400;
       font-size: 28px;
@@ -413,9 +393,6 @@
       width: 28px;
       height: 28px;
       border-radius: 999px;
-      background: #ffffff;
-      cursor: pointer;
-      transition: all 250ms ease-in-out;
       background: #FFFFFF;
       cursor: pointer;
       transition: width 200ms ease, background 200ms ease, transform 200ms ease;
@@ -447,7 +424,6 @@
     .highlights-slider #slide-4:checked ~ .carousel-dots label[for="slide-4"] {
       width: 40px;
       border-radius: 20px;
-      background: #F1C953;
       background: var(--primary-yellow);
       transform: scale(1);
     }
@@ -944,26 +920,16 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-  <header class="site-header">
-=======
   <header class="site-header bg-green">
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
     <div class="header-inner">
       <a class="logo" href="index.html" aria-label="Zur Startseite">
         <img src="img/global/logo-circle.png" alt="Griechenland Travel Blog Logo">
       </a>
 
       <nav class="main-nav" aria-label="Hauptnavigation">
-<<<<<<< HEAD
-        <a href="#highlights">Highlights</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-=======
         <a class="link" href="#highlights">Highlights</a>
         <a class="link" href="#faq">FAQ</a>
         <a class="link" href="#contact">Contact</a>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
       </nav>
     </div>
   </header>
@@ -987,17 +953,10 @@
         <div class="highlights-headline-text">
           <div class="section-title highlights-title">
             <img src="img/global/icon-rocket.svg" alt="" aria-hidden="true">
-<<<<<<< HEAD
-            <h2 id="highlights-title">Highlights</h2>
-          </div>
-
-          <p class="text text-brown highlights-intro center">Von den historischen Tempeln Athens bis zu den sonnigen Stränden der griechischen Inseln bietet Griechenland eine einzigartige Mischung aus Kultur, Geschichte und Entspannung. Jede Region erzählt ihre eigene Geschichte und lädt Besucher dazu ein, die Schönheit des Mittelmeers zu entdecken.</p>
-=======
             <h2 id="highlights-title" class="h2 color-green">Highlights</h2>
           </div>
 
           <p class="text text-lg color-brown highlights-intro text-center">Von den historischen Tempeln Athens bis zu den sonnigen Stränden der griechischen Inseln bietet Griechenland eine einzigartige Mischung aus Kultur, Geschichte und Entspannung. Jede Region erzählt ihre eigene Geschichte und lädt Besucher dazu ein, die Schönheit des Mittelmeers zu entdecken.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
         </div>
 
         <div class="carousel-box highlights-slider" role="region" aria-label="Highlights Slider">
@@ -1010,52 +969,32 @@
             <article class="carousel-slide">
               <img src="img/index/highlight-athens-01.jpg" alt="Historische Orte in Athen">
               <div class="carousel-overlay">
-<<<<<<< HEAD
-                <h3>Die faszinierendsten Orte in Athen</h3>
-                <p>Von antiken Sehenswürdigkeiten wie der Akropolis bis zu lebhaften Märkten und traditionellen Tavernen bietet Athen unvergessliche Erlebnisse für Reisende, die Geschichte, Kultur und mediterranes Leben lieben.</p>
-=======
                 <h3 class="h3 color-white">Historische Schätze und antike Kultur</h3>
                 <p class="text-xl color-white">Die Geschichte Athens reicht über tausende Jahre zurück. Besucher können beeindruckende Bauwerke wie den Parthenon, antike Tempel und Museen erkunden. Die Stadt ist ein lebendiges Freilichtmuseum, das die faszinierende Vergangenheit Griechenlands eindrucksvoll widerspiegelt.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
               </div>
             </article>
 
             <article class="carousel-slide">
               <img src="img/index/highlight-athens-02.jpg" alt="Griechische Küche in Athen">
               <div class="carousel-overlay">
-<<<<<<< HEAD
-                <h3>Kulinarische Highlights in Athen</h3>
-                <p>Athen ist ein Paradies für Feinschmecker. Von traditionellen Tavernen bis zu modernen Restaurants können Besucher die Vielfalt der griechischen Küche entdecken. Frischer Fisch, Olivenöl, mediterrane Gewürze und regionale Spezialitäten machen jede Mahlzeit zu einem besonderen Erlebnis.</p>
-=======
                 <h3 class="h3 color-white">Die faszinierendsten Orte in Athen</h3>
                 <p class="text-xl color-white">Von antiken Sehenswürdigkeiten wie der Akropolis bis zu lebhaften Märkten und traditionellen Tavernen bietet Athen unvergessliche Erlebnisse für Reisende, die Geschichte, Kultur und mediterranes Leben lieben.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
               </div>
             </article>
 
             <article class="carousel-slide">
               <img src="img/index/highlight-athens-03.jpg" alt="Antike Kultur und historische Schätze in Athen">
               <div class="carousel-overlay">
-<<<<<<< HEAD
-                <h3>Historische Schätze und antike Kultur</h3>
-                <p>Die Geschichte Athens reicht über tausende Jahre zurück. Besucher können beeindruckende Bauwerke wie den Parthenon, antike Tempel und Museen erkunden. Die Stadt ist ein lebendiges Freilichtmuseum, das die faszinierende Vergangenheit Griechenlands eindrucksvoll widerspiegelt.</p>
-=======
                 <h3 class="h3 color-white">Kulinarische Highlights in Athen</h3>
                 <p class="text-xl color-white">Athen ist ein Paradies für Feinschmecker. Von traditionellen Tavernen bis zu modernen Restaurants können Besucher die Vielfalt der griechischen Küche entdecken. Frischer Fisch, Olivenöl, mediterrane Gewürze und regionale Spezialitäten machen jede Mahlzeit zu einem besonderen Erlebnis.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
               </div>
             </article>
 
             <article class="carousel-slide">
               <img src="img/index/highlight-athens-04.jpg" alt="Strand in Griechenland mit klarem Wasser">
               <div class="carousel-overlay">
-<<<<<<< HEAD
-                <h3>Entspannung an den schönsten Stränden Griechenlands</h3>
-                <p>Neben kulturellen Sehenswürdigkeiten bietet Griechenland auch traumhafte Strände mit kristallklarem Wasser und sonnigem Klima. Ob an der Athener Riviera oder auf den umliegenden Inseln – hier finden Reisende perfekte Orte zum Entspannen, Schwimmen und Genießen der mediterranen Natur.</p>
-=======
                 <h3 class="h3 color-white">Entspannung an den schönsten Stränden Griechenlands</h3>
                 <p class="text-xl color-white">Neben kulturellen Sehenswürdigkeiten bietet Griechenland auch traumhafte Strände mit kristallklarem Wasser und sonnigem Klima. Ob an der Athener Riviera oder auf den umliegenden Inseln – hier finden Reisende perfekte Orte zum Entspannen, Schwimmen und Genießen der mediterranen Natur.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
               </div>
             </article>
           </div>
@@ -1074,11 +1013,7 @@
       <div class="container">
         <div class="section-title">
           <img src="img/global/icone-faq.svg" alt="" aria-hidden="true">
-<<<<<<< HEAD
-          <h2 id="faq-title">FAQ</h2>
-=======
           <h2 id="faq-title" class="h2 color-green">FAQ</h2>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
         </div>
 
         <div class="faq-list">
@@ -1087,11 +1022,7 @@
             <p class="faq-answer">Athen verbindet antike Geschichte mit modernem Stadtleben. Besucher können berühmte Sehenswürdigkeiten wie die Akropolis entdecken und gleichzeitig das mediterrane Lebensgefühl genießen.</p>
           </details>
 
-<<<<<<< HEAD
-          <details class="faq-item">
-=======
           <details class="faq-item" open>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
             <summary>Wann ist die beste Reisezeit für Griechenland?</summary>
             <p class="faq-answer">Die beste Reisezeit ist von April bis Juni sowie von September bis Oktober. In diesen Monaten ist das Wetter angenehm warm und ideal für Sightseeing.</p>
           </details>
@@ -1113,17 +1044,10 @@
       <div class="container">
         <div class="section-title">
           <img src="img/global/icon-contact.svg" alt="" aria-hidden="true">
-<<<<<<< HEAD
-          <h2 id="contact-title">Contact Form</h2>
-        </div>
-
-        <p class="text text-brown center contact-intro">Haben Sie Fragen zu Ihrer Reise nach Griechenland oder benötigen Sie Tipps für Ihren Aufenthalt in Athen? Kontaktieren Sie uns – wir helfen Ihnen gerne bei der Planung und geben Empfehlungen für Sehenswürdigkeiten, Restaurants und Aktivitäten.</p>
-=======
           <h2 id="contact-title" class="h2 color-green">Contact Form</h2>
         </div>
 
         <p class="text text-lg color-brown text-center contact-intro">Haben Sie Fragen zu Ihrer Reise nach Griechenland oder benötigen Sie Tipps für Ihren Aufenthalt in Athen? Kontaktieren Sie uns – wir helfen Ihnen gerne bei der Planung und geben Empfehlungen für Sehenswürdigkeiten, Restaurants und Aktivitäten.</p>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
 
         <form class="contact-form" action="#" method="post">
           <div class="form-row">
@@ -1149,31 +1073,19 @@
           </label>
 
           <div class="form-submit">
-<<<<<<< HEAD
-            <button class="btn btn-green" type="submit">Senden</button>
-=======
             <button class="btn-secondary btn-green" type="submit">Senden</button>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
           </div>
         </form>
       </div>
     </section>
   </main>
 
-<<<<<<< HEAD
-  <footer class="site-footer">
-=======
   <footer class="site-footer bg-green">
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
     <div class="footer-inner">
       <div class="footer-links">
         <div class="footer-copy">
           <span aria-hidden="true">©</span>
-<<<<<<< HEAD
-          <span>2026 name</span>
-=======
           <span>Travel Blog 2026</span>
->>>>>>> 00682bdea0a5b967a070bde501ff336a11eb3498
         </div>
         <a href="imprint.html">Imprint</a>
         <a href="privacy.html">Cookie Preferences</a>
