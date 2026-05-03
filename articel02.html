@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Athen Travel Blog</title>
+  <title>Griechenland Travel Blog</title>
 
   <link rel="icon" type="image/png" href="img/global/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -21,6 +21,49 @@
       background: white;
     }
 
+    /* HEADER */
+    .site-header {
+      width: 100%;
+      height: 128px;
+      background: #4EAA87;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 102px;
+    }
+
+    .logo img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .main-nav a:hover {
+      color: #f1a51c;
+    }
+
     main {
       max-width: 1200px;
       margin: 70px auto;
@@ -33,7 +76,7 @@
       align-items: flex-start;
       gap: 70px;
       margin-bottom: 45px;
-}
+    }
 
     .hero-text {
       flex: 1;
@@ -67,8 +110,9 @@
     .meta {
       display: flex;
       gap: 24px;
-      color: #5c4328; /* Textfarbe wie im Screenshot */
+      color: #5c4328;
       font-size: 16px;
+      flex-wrap: wrap;
     }
 
     .author {
@@ -88,7 +132,7 @@
       object-fit: cover;
       margin-bottom: 12px;
     }
- 
+
     .author h3 {
       font-size: 15px;
     }
@@ -118,7 +162,6 @@
       object-fit: cover;
       display: block;
     }
-
 
     ul {
       margin-left: 25px;
@@ -184,13 +227,114 @@
       font-weight: bold;
     }
 
+    /* FOOTER */
+    .site-footer {
+      width: 100%;
+      background: #4EAA87;
+      padding: 60px 120px;
+    }
 
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .footer-copy {
+      color: white;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      color: white;
+      font-size: 28px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        height: auto;
+        padding: 20px 0;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-nav {
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .author {
+        width: 100%;
+      }
+
+      .site-footer {
+        padding: 40px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        gap: 24px;
+      }
+    }
   </style>
 </head>
 
 <body>
-<main>
 
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html" aria-label="Zur Startseite">
+      <img src="img/global/logo-circle.png" alt="Athen Travel Blog Logo">
+    </a>
+
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="article01.html">Blog</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
   <section class="hero">
     <div class="hero-text">
       <p class="subtitle">Erleben Sie Athen aus einer neuen Perspektive</p>
@@ -201,22 +345,22 @@
         Athen ist nicht nur eine Stadt voller Geschichte, sondern auch ein lebendiger Ort mit moderner Atmosphäre und zahlreichen Freizeitmöglichkeiten. Zwischen historischen Sehenswürdigkeiten, belebten Straßen und traditionellen Restaurants können Besucher das echte Leben der Stadt kennenlernen. Dieser Beitrag zeigt, wie vielseitig Athen ist und warum sich ein Besuch jederzeit lohnt.
       </p>
 
-<div class="meta">
-  <span><i class="bi bi-calendar"></i> Datum: 26.01.2026</span>
-  <span><i class="bi bi-eyeglasses"></i> Lesezeit: 6 min.</span>
-  <span><i class="bi bi-eye"></i> Lesen: 164</span>
-  <span><i class="bi bi-share"></i> Teilen: 18</span>
-</div>
+      <div class="meta">
+        <span><i class="bi bi-calendar"></i> Datum: 26.01.2026</span>
+        <span><i class="bi bi-eyeglasses"></i> Lesezeit: 6 min.</span>
+        <span><i class="bi bi-eye"></i> Lesen: 164</span>
+        <span><i class="bi bi-share"></i> Teilen: 18</span>
+      </div>
     </div>
 
     <aside class="author">
-      <img src="img/global/author.jpg">
+      <img src="img/global/author.jpg" alt="Autor Thomas Müller">
 
       <h3>Thomas Müller</h3>
       <strong>Autor</strong>
 
       <p>
-      Reisen bedeutet für mich, neue Orte zu entdecken und besondere Momente zu erleben. Seit mehreren Jahren besuche ich Städte in Europa und teile meine Erfahrungen in diesem Blog. Athen gehört zu meinen Lieblingszielen, weil die Stadt Geschichte, Kultur und modernes Leben auf einzigartige Weise verbindet.
+        Reisen bedeutet für mich, neue Orte zu entdecken und besondere Momente zu erleben. Seit mehreren Jahren besuche ich Städte in Europa und teile meine Erfahrungen in diesem Blog. Athen gehört zu meinen Lieblingszielen, weil die Stadt Geschichte, Kultur und modernes Leben auf einzigartige Weise verbindet.
       </p>
     </aside>
   </section>
@@ -225,59 +369,77 @@
     Athen ist eine Stadt, die Geschichte und modernes Leben auf einzigartige Weise verbindet. Von der berühmten Akropolis bis zu den lebhaften Straßen der Altstadt gibt es zahlreiche Orte zu entdecken. Besucher können durch historische Viertel spazieren, beeindruckende Bauwerke bestaunen und gleichzeitig das mediterrane Lebensgefühl genießen. Die Stadt bietet eine perfekte Mischung aus Kultur, Tradition und moderner Atmosphäre.
   </p>
 
-   <section class="video-box">
-
+  <section class="video-box">
     <video controls poster="video/video-poster.jpg">
-    <source src="video/article02-video.mp4" type="video/mp4">
-    Dein Broser unterstützt dieses Video nicht.
+      <source src="video/article02-video.mp4" type="video/mp4">
+      Dein Browser unterstützt dieses Video nicht.
     </video>
-
-</section>
+  </section>
 
   <p>
     Ein Besuch in Athen ist ein besonderes Erlebnis für Reisende jeden Alters. Neben den bekannten Sehenswürdigkeiten gibt es viele Möglichkeiten, die Stadt aktiv zu erkunden und neue Eindrücke zu sammeln. Ob ein Spaziergang durch die engen Gassen, ein Essen in einer traditionellen Taverne oder ein Blick über die Stadt bei Sonnenuntergang – Athen hinterlässt bei jedem Besucher bleibende Erinnerungen.
   </p>
 
-    <p>
-    Praktische Tipps für einen angenehmen Aufenthalt in Athen:  </p>
+  <p>
+    Praktische Tipps für einen angenehmen Aufenthalt in Athen:
+  </p>
 
   <ul>
     <li>Besuchen Sie die wichtigsten Sehenswürdigkeiten früh am Morgen, um lange Warteschlangen zu vermeiden.</li>
-    <li>Trinken Sie ausreichend Wasser und schützen Sie sich vor der Sonne, besonders während der heißen Sommermonate..</li>
+    <li>Trinken Sie ausreichend Wasser und schützen Sie sich vor der Sonne, besonders während der heißen Sommermonate.</li>
     <li>Tragen Sie bequeme Schuhe, da viele Wege in der Stadt zu Fuß zurückgelegt werden.</li>
   </ul>
 
   <p>
-   Athen ist eine lebendige Stadt mit zahlreichen Möglichkeiten, Neues zu entdecken. Wer seine Reise gut plant und genügend Zeit einplant, kann die historischen Sehenswürdigkeiten, die vielfältige griechische Küche und die besondere Atmosphäre der Stadt in vollen Zügen genießen. Eine Reise nach Athen bietet unvergessliche Eindrücke und viele schöne Erlebnisse für jeden Besucher.
-   Neben den berühmten Sehenswürdigkeiten wie der Akropolis oder dem Parthenon gibt es in der Stadt viele weitere Orte zu erkunden. Kleine Cafés, traditionelle Märkte und gemütliche Tavernen laden dazu ein, das authentische Leben der Griechen kennenzulernen. Besonders am Abend zeigt sich Athen von seiner schönsten Seite, wenn die Straßen beleuchtet sind und die Restaurants mit Gästen gefüllt sind.
+    Athen ist eine lebendige Stadt mit zahlreichen Möglichkeiten, Neues zu entdecken. Wer seine Reise gut plant und genügend Zeit einplant, kann die historischen Sehenswürdigkeiten, die vielfältige griechische Küche und die besondere Atmosphäre der Stadt in vollen Zügen genießen. Eine Reise nach Athen bietet unvergessliche Eindrücke und viele schöne Erlebnisse für jeden Besucher.
+    Neben den berühmten Sehenswürdigkeiten wie der Akropolis oder dem Parthenon gibt es in der Stadt viele weitere Orte zu erkunden. Kleine Cafés, traditionelle Märkte und gemütliche Tavernen laden dazu ein, das authentische Leben der Griechen kennenzulernen. Besonders am Abend zeigt sich Athen von seiner schönsten Seite, wenn die Straßen beleuchtet sind und die Restaurants mit Gästen gefüllt sind.
   </p>
 
   <section class="pro-tip">
-  <div class="label">
-    <img src="img/global/tip-icon.svg" alt="Pro Tipps">
-  </div>
+    <div class="label">
+      <img src="img/global/tip-icon.svg" alt="Pro Tipps">
+    </div>
 
-  <ol>
-    <li>
-      Planen Sie ausreichend Zeit für Pausen ein, besonders bei hohen Temperaturen im Sommer.
-      <a href="#">Useful link.</a>
-    </li>
-    <li>
-      Tragen Sie bequeme Kleidung und achten Sie auf genügend Wasser während Ihrer Ausflüge.
-    </li>
-  </ol>
+    <ol>
+      <li>
+        Planen Sie ausreichend Zeit für Pausen ein, besonders bei hohen Temperaturen im Sommer.
+        <a href="#">Useful link.</a>
+      </li>
+      <li>
+        Tragen Sie bequeme Kleidung und achten Sie auf genügend Wasser während Ihrer Ausflüge.
+      </li>
+    </ol>
   </section>
 
   <section class="share">
     <p>
-    Folge mir für weitere spannende Inhalte
-    und teile den Artikel mit deinen Freunden!
+      Folge mir für weitere spannende Inhalte
+      und teile den Artikel mit deinen Freunden!
     </p>
 
     <button>↗ Share</button>
   </section>
-
 </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      © 2026 Athen Travel Blog
+    </div>
+
+    <div class="footer-links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+
+    <div class="footer-socials" aria-label="Social Media Links">
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
