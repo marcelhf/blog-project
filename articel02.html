@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Copenhagen Travel Blog</title>
+  <title>Athen Travel Blog</title>
+
+  <link rel="icon" type="image/png" href="img/global/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <style>
     * {
@@ -12,42 +15,10 @@
       padding: 0;
     }
 
-    body {S
+    body {
       font-family: Georgia, serif;
       color: #333;
       background: white;
-    }
-
-    header {
-      height: 128px;
-      background: #4EAA87;
-      display: flex;
-      align-items: center;
-      padding: 0 130px;
-      gap: 120px;
-    }
-
-    .logo {
-      color: #ffd22e;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 0.9;
-    }
-
-    .logo span {
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      gap: 90px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: bold;
     }
 
     main {
@@ -59,9 +30,10 @@
     .hero {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 70px;
       margin-bottom: 45px;
-    }
+}
 
     .hero-text {
       flex: 1;
@@ -82,33 +54,41 @@
 
     p {
       font-size: 17px;
-      line-height: 1.45;
+      line-height: 1.65;
       margin-bottom: 32px;
+    }
+
+    .meta i {
+      color: #4EAA87;
+      margin-right: 6px;
+      font-size: 16px;
     }
 
     .meta {
       display: flex;
       gap: 24px;
-      color: #777;
-      font-size: 12px;
+      color: #5c4328; /* Textfarbe wie im Screenshot */
+      font-size: 16px;
     }
 
     .author {
-      width: 250px;
+      width: 272px;
+      min-height: 351px;
       background: #dff3eb;
       border-radius: 18px;
       text-align: center;
-      padding: 18px;
+      padding: 20px;
+      flex-shrink: 0;
     }
 
     .author img {
-      width: 105px;
-      height: 105px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-
+ 
     .author h3 {
       font-size: 15px;
     }
@@ -124,36 +104,21 @@
     }
 
     .video-box {
-      max-width: 880px;
-      height: 430px;
-      margin: 60px auto;
+      max-width: 931px;
+      width: 100%;
+      aspect-ratio: 931 / 449;
+      margin: 64px auto;
       border-radius: 32px;
       overflow: hidden;
-      position: relative;
     }
 
-    .video-box img {
+    .video-box video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    .play {
-      width: 100px;
-      height: 100px;
-      border: 8px solid white;
-      border-radius: 50%;
-      color: white;
-      font-size: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-left: 8px;
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      background: rgba(255,255,255,0.15);
-    }
 
     ul {
       margin-left: 25px;
@@ -163,28 +128,35 @@
     }
 
     .pro-tip {
+      text-align: center;
       background: #dff3eb;
-      border-radius: 14px;
-      padding: 26px 35px;
-      margin: 70px 30px;
+      border-radius: 24px;
+      max-width: 850px;
+      margin: 70px auto;
+      padding: 36px 30px 32px 30px;
       position: relative;
     }
 
     .label {
       position: absolute;
-      top: -28px;
-      left: -10px;
-      background: #4EAA87;
-      color: white;
-      padding: 8px 18px;
-      border-radius: 4px;
-      transform: rotate(-10deg);
-      font-weight: bold;
+      top: -38px;
+      left: -80px;
+      z-index: 2;
+    }
+
+    .label img {
+      width: 196px;
+      height: 66px;
+      display: block;
     }
 
     .pro-tip ol {
-      margin-left: 20px;
-      font-size: 15px;
+      display: inline-block;
+      text-align: left;
+      margin: 0;
+      padding-left: 20px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .pro-tip a {
@@ -212,189 +184,100 @@
       font-weight: bold;
     }
 
-    footer {
-      height: 152px;
-      background: #4EAA87;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      font-size: 13px;
-    }
 
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .icons {
-      display: flex;
-      gap: 14px;
-      color: #ffd22e;
-      font-weight: bold;
-    }
-
-    @media (max-width: 800px) {
-      header {
-        padding: 0 30px;
-        gap: 40px;
-      }
-
-      nav {
-        gap: 25px;
-      }
-
-      .hero {
-        flex-direction: column;
-      }
-
-      .author {
-        width: 100%;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .subtitle {
-        font-size: 22px;
-      }
-
-      .video-box {
-        height: 260px;
-      }
-
-      footer {
-        flex-direction: column;
-        height: auto;
-        padding: 30px;
-        gap: 15px;
-      }
-    }
   </style>
 </head>
 
 <body>
+<main>
 
-  <header>
-    <div class="logo">
-      Travel<br>
-      <span>Blog</span>
-    </div>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="subtitle">Erleben Sie Athen aus einer neuen Perspektive</p>
 
-    <nav>
-      <a href="#">Highlights</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+      <h1>Athen entdecken: Kultur, Kulinarik und unvergessliche Erlebnisse</h1>
 
-  <main>
-
-    <section class="hero">
-      <div class="hero-text">
-        <p class="subtitle">A Stylish Scandinavian Escape</p>
-
-        <h1>Copenhagen in 3 Days: Big Experiences, Smart Spending</h1>
-
-        <p>
-          Discover Copenhagen, where historic charm meets modern design,
-          vibrant cycling culture and waterfront living.
-        </p>
-
-        <div class="meta">
-          <span>📅 June 24, 2026</span>
-          <span>📖 Reading time: 4 min</span>
-          <span>📍 Read: 14</span>
-          <span>✈ Shared: 38</span>
-        </div>
-      </div>
-
-      <aside class="author">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" alt="Author">
-
-        <h3>Tamara Müller</h3>
-        <strong>Author</strong>
-
-        <p>
-          I've been exploring Europe since 2017, sharing inspiring stories
-          and places for travel lovers.
-        </p>
-      </aside>
-    </section>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
-      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
-    </p>
-
-    <section class="video-box">
-      <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1000" alt="Copenhagen">
-      <div class="play">▶</div>
-    </section>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
-      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
-    </p>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada:
-    </p>
-
-    <ul>
-      <li>Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.</li>
-      <li>Lorem ipsum dolor sit amet consectetur turpis gravida semper.</li>
-      <li>Lorem ipsum dolor sit amet consectetur.</li>
-      <li>Ante in commodo porta scelerisque turpis gravida semper.</li>
-    </ul>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur. Egestas a enim vestibulum malesuada.
-      Ante in commodo porta scelerisque turpis gravida semper. Lorem ipsum dolor sit amet consectetur.
-      Egestas a enim vestibulum malesuada.
-    </p>
-
-    <section class="pro-tip">
-      <div class="label">💡 Pro tips</div>
-
-      <ol>
-        <li>
-          Ante in commodo porta scelerisque turpis gravida semper.
-          <a href="#">Useful link.</a>
-        </li>
-        <li>
-          Lorem ipsum dolor sit amet enim vestibulum malesuada.
-          Ante interdum commodo porta scelerisque turpis.
-        </li>
-      </ol>
-    </section>
-
-    <section class="share">
       <p>
-        Follow me for more content like this,<br>
-        share the article with your friends!
+        Athen ist nicht nur eine Stadt voller Geschichte, sondern auch ein lebendiger Ort mit moderner Atmosphäre und zahlreichen Freizeitmöglichkeiten. Zwischen historischen Sehenswürdigkeiten, belebten Straßen und traditionellen Restaurants können Besucher das echte Leben der Stadt kennenlernen. Dieser Beitrag zeigt, wie vielseitig Athen ist und warum sich ein Besuch jederzeit lohnt.
       </p>
 
-      <button>↗ Share</button>
-    </section>
-
-  </main>
-
-  <footer>
-    <div>© Travel Blog 2026</div>
-
-    <a href="#">Imprint</a>
-    <a href="#">Cookie Preferences</a>
-
-    <div class="icons">
-      <span>♫</span>
-      <span>▶</span>
-      <span>f</span>
-      <span>◎</span>
-      <span>in</span>
+<div class="meta">
+  <span><i class="bi bi-calendar"></i> Datum: 26.01.2026</span>
+  <span><i class="bi bi-eyeglasses"></i> Lesezeit: 6 min.</span>
+  <span><i class="bi bi-eye"></i> Lesen: 164</span>
+  <span><i class="bi bi-share"></i> Teilen: 18</span>
+</div>
     </div>
-  </footer>
+
+    <aside class="author">
+      <img src="img/global/author.jpg">
+
+      <h3>Thomas Müller</h3>
+      <strong>Autor</strong>
+
+      <p>
+      Reisen bedeutet für mich, neue Orte zu entdecken und besondere Momente zu erleben. Seit mehreren Jahren besuche ich Städte in Europa und teile meine Erfahrungen in diesem Blog. Athen gehört zu meinen Lieblingszielen, weil die Stadt Geschichte, Kultur und modernes Leben auf einzigartige Weise verbindet.
+      </p>
+    </aside>
+  </section>
+
+  <p>
+    Athen ist eine Stadt, die Geschichte und modernes Leben auf einzigartige Weise verbindet. Von der berühmten Akropolis bis zu den lebhaften Straßen der Altstadt gibt es zahlreiche Orte zu entdecken. Besucher können durch historische Viertel spazieren, beeindruckende Bauwerke bestaunen und gleichzeitig das mediterrane Lebensgefühl genießen. Die Stadt bietet eine perfekte Mischung aus Kultur, Tradition und moderner Atmosphäre.
+  </p>
+
+   <section class="video-box">
+
+    <video controls poster="video/video-poster.jpg">
+    <source src="video/article02-video.mp4" type="video/mp4">
+    Dein Broser unterstützt dieses Video nicht.
+    </video>
+
+</section>
+
+  <p>
+    Ein Besuch in Athen ist ein besonderes Erlebnis für Reisende jeden Alters. Neben den bekannten Sehenswürdigkeiten gibt es viele Möglichkeiten, die Stadt aktiv zu erkunden und neue Eindrücke zu sammeln. Ob ein Spaziergang durch die engen Gassen, ein Essen in einer traditionellen Taverne oder ein Blick über die Stadt bei Sonnenuntergang – Athen hinterlässt bei jedem Besucher bleibende Erinnerungen.
+  </p>
+
+    <p>
+    Praktische Tipps für einen angenehmen Aufenthalt in Athen:  </p>
+
+  <ul>
+    <li>Besuchen Sie die wichtigsten Sehenswürdigkeiten früh am Morgen, um lange Warteschlangen zu vermeiden.</li>
+    <li>Trinken Sie ausreichend Wasser und schützen Sie sich vor der Sonne, besonders während der heißen Sommermonate..</li>
+    <li>Tragen Sie bequeme Schuhe, da viele Wege in der Stadt zu Fuß zurückgelegt werden.</li>
+  </ul>
+
+  <p>
+   Athen ist eine lebendige Stadt mit zahlreichen Möglichkeiten, Neues zu entdecken. Wer seine Reise gut plant und genügend Zeit einplant, kann die historischen Sehenswürdigkeiten, die vielfältige griechische Küche und die besondere Atmosphäre der Stadt in vollen Zügen genießen. Eine Reise nach Athen bietet unvergessliche Eindrücke und viele schöne Erlebnisse für jeden Besucher.
+   Neben den berühmten Sehenswürdigkeiten wie der Akropolis oder dem Parthenon gibt es in der Stadt viele weitere Orte zu erkunden. Kleine Cafés, traditionelle Märkte und gemütliche Tavernen laden dazu ein, das authentische Leben der Griechen kennenzulernen. Besonders am Abend zeigt sich Athen von seiner schönsten Seite, wenn die Straßen beleuchtet sind und die Restaurants mit Gästen gefüllt sind.
+  </p>
+
+  <section class="pro-tip">
+  <div class="label">
+    <img src="img/global/tip-icon.svg" alt="Pro Tipps">
+  </div>
+
+  <ol>
+    <li>
+      Planen Sie ausreichend Zeit für Pausen ein, besonders bei hohen Temperaturen im Sommer.
+      <a href="#">Useful link.</a>
+    </li>
+    <li>
+      Tragen Sie bequeme Kleidung und achten Sie auf genügend Wasser während Ihrer Ausflüge.
+    </li>
+  </ol>
+  </section>
+
+  <section class="share">
+    <p>
+    Folge mir für weitere spannende Inhalte
+    und teile den Artikel mit deinen Freunden!
+    </p>
+
+    <button>↗ Share</button>
+  </section>
+
+</main>
 
 </body>
 </html>

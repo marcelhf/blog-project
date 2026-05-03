@@ -1,0 +1,24 @@
+<svg width="260" height="150" viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(-13.67 130 75)">
+    <rect x="38" y="39" width="195" height="72" rx="14" fill="#4EA487"/>
+
+    <g transform="translate(58 50)">
+      <path d="M23 5C14.2 5 7 12.2 7 21C7 26.7 10 31.6 14.4 34.5C16.1 35.6 17 37.3 17 39.3V40H29V39.3C29 37.3 29.9 35.6 31.6 34.5C36 31.6 39 26.7 39 21C39 12.2 31.8 5 23 5Z" fill="#F1C953"/>
+      <path d="M17 45H29" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M19 51H27" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M23 0V-5" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M4 21H0" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M46 21H42" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M9 7L5.5 3.5" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+      <path d="M37 7L40.5 3.5" stroke="#F1C953" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <text x="113" y="85"
+      font-family="Palanquin, Arial, sans-serif"
+      font-size="28"
+      font-weight="700"
+      fill="#F1C953">
+      Pro tipps
+    </text>
+  </g>
+</svg>
