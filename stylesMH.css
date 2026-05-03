@@ -16,7 +16,7 @@ header {
     box-sizing: border-box;
 }
 
-nav {
+.top-nav {
     display: flex;
     gap: 72px;
     max-width: 1440px;
@@ -24,14 +24,14 @@ nav {
     align-items: center;
 }
 
-nav ul {
+.top-nav ul {
     display: flex;
     list-style: none;
     gap: 72px;
     margin: 0;
 }
 
-nav img {
+.top-nav img {
     height: 72px;
     width: 72px;
 }
@@ -48,8 +48,18 @@ main {
     color: #F8F5EB;
 }
 
+.link-green {
+    text-decoration: none;
+    color: #4EA487;
+}
+
 .link:hover {
     color: #F1C953;
+    cursor: pointer;
+}
+
+.link-green:hover {
+    color: #2d5f4f;
     cursor: pointer;
 }
 
@@ -71,6 +81,7 @@ main {
     flex-direction: column;
     gap: 8px;
     flex: 1;
+    gap: 40px;
 }
 
 .headlines-main h2 {
@@ -94,7 +105,6 @@ h1 {
     font-weight: 400;
     font-size: 32px;
     margin: 0;
-    margin-bottom: 40px;
 }
 
 .headline-subarea {
@@ -144,17 +154,42 @@ h1 {
     gap: 4px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
+    perspective: 1500px;
 }
 
 .destination-img {
     width: 300px;
     height: 440px;
-    transition: all 0.2s ease-out;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    margin-left: -40px;
+    transform-origin: center center;
+    transition: all 0.3s ease;
+}
+
+.img1 {
+    transform: rotateY(18deg);
+}
+
+.img2 {
+    transform: rotateY(18deg);
+}
+
+.img3 {
+    transform: rotateY(18deg);
+}
+
+.img4 {
+    transform: rotateY(18deg);
 }
 
 .destination-img:hover {
     transform: scale(1.1);
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .description-section {
@@ -211,6 +246,7 @@ h1 {
 
 .share-btn:hover {
     background-color: #2d5f4f;
+    cursor: pointer;
 }
 
 .share-section {
@@ -271,4 +307,78 @@ footer {
 .social-media-logo {
     width: 32px;
     height: 32px;
+}
+
+.menu-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+.bottom-menu {
+    display: flex;
+    background-color: #F1C953;
+    padding: 24px 25px;
+    justify-content: center;
+    display: none
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.bottom-nav ul {
+    padding-left: 0;
+}
+
+@media(max-width: 375px) {
+    .headline-section {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    main {
+        padding: 70px 15px;
+    }
+    .top-nav ul {
+        display: none
+    }
+    .headlines-main h2 {
+        font-size: 20px;
+    }
+    .headlines-main h3 {
+        font-size: 18px;
+    }
+    .destination-section h3 {
+        font-size: 20px;
+    }
+    .destination-section {
+        gap: 40px;
+    }
+    .share-arrow {
+        transform: rotate(16deg);
+        width: 80px;
+        height: 80px;
+    }
+    .copyrights {
+        flex-direction: column-reverse;
+        gap: 8px;
+        font-size: 16px;
+    }
+    footer {
+        padding: 30px 24px;
+    }
+    .social-media-logo {
+        width: 24px;
+        height: 24px;
+    }
+    .footer-section {
+        align-items: flex-end;
+    }
+    .bottom-menu {
+        display: block;
+    }
 }
