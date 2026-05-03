@@ -1,0 +1,494 @@
+/* =========================================================
+   Travel Blog - Globale Basisdatei
+   Nur globale Schriften, Farben, Typografie und kleine Resets.
+   Seitenlayout, Cards, Slider, Header, Footer und Mobile-Styles
+   kommen direkt in die jeweilige HTML-Datei.
+========================================================= */
+
+/* =========================================================
+   1. Fonts
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Palanquin:wght@400;500;600;700&family=Palanquin+Dark:wght@600;700&display=swap");
+
+/* =========================================================
+   2. Farben & Schriftvariablen
+========================================================= */
+
+:root {
+  --primary-green: #4EA487;
+  --primary-yellow: #F1C953;
+  --secondary-brown: #54370D;
+  --cream: #F8F5EB;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark: #3D3D3D;
+  --gray: #737373;
+  --light-gray: #EEEDEB;
+
+  --hover-green: #2D5F4F;
+  --shadow-green: rgba(78, 164, 135, 0.3);
+
+  --site-width: 1440px;
+  --content-width: 1200px;
+  --header-height: 128px;
+  --section-gap: 88px;
+
+  --font-heading: "Arima", serif;
+  --font-body: "Palanquin", sans-serif;
+  --font-display: "Palanquin Dark", sans-serif;
+}
+
+/* =========================================================
+   3. Minimaler Reset
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   4. Globale Layout-Basis
+========================================================= */
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--secondary-brown);
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.site-header,
+header {
+  width: 100%;
+  min-height: var(--header-height);
+  background-color: var(--primary-green);
+  box-sizing: border-box;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.site-nav,
+nav {
+  display: flex;
+  align-items: center;
+  gap: 102px;
+  width: min(100%, var(--site-width));
+  margin: 0 auto;
+  padding: 28px 120px;
+  box-sizing: border-box;
+}
+
+.site-nav ul,
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-nav img,
+nav img,
+.site-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.site-main,
+main {
+  width: 100%;
+}
+
+.section-padding {
+  padding: 128px 120px;
+}
+
+.section-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.container {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.site-footer,
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 152px;
+  padding: 60px 120px;
+  box-sizing: border-box;
+  background-color: var(--primary-green);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.footer-inner,
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 72px;
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.footer-links,
+.copyrights {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+
+.social-media,
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-media-logo,
+.social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* =========================================================
+   5. Globale Typografie Desktop
+========================================================= */
+
+h1,
+.h1 {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2,
+.h2 {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3,
+.h3 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+h4,
+.h4 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-xl {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.text-lg {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-md {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-sm {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-xs {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.nav-link,
+.link {
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.nav-link:hover,
+.link:hover {
+  color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+.author-name {
+  font-weight: 700;
+}
+
+.text-highlight {
+  font-family: var(--font-body);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-subheadline {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   6. Globale Farbklassen
+========================================================= */
+
+.color-green {
+  color: var(--primary-green);
+}
+
+.color-yellow {
+  color: var(--primary-yellow);
+}
+
+.color-brown {
+  color: var(--secondary-brown);
+}
+
+.color-cream {
+  color: var(--cream);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.color-dark {
+  color: var(--dark);
+}
+
+.bg-green {
+  background-color: var(--primary-green);
+}
+
+.bg-yellow {
+  background-color: var(--primary-yellow);
+}
+
+.bg-brown {
+  background-color: var(--secondary-brown);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+/* =========================================================
+   7. Globale Hilfsklassen
+========================================================= */
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+.gap-48 {
+  gap: 48px;
+}
+
+.gap-72 {
+  gap: 72px;
+}
+
+.gap-88 {
+  gap: 88px;
+}
+
+.avatar-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-primary,
+.share-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 158px;
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 40px;
+  background-color: var(--primary-green);
+  color: var(--primary-yellow);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 200ms ease, box-shadow 200ms ease, text-shadow 200ms ease;
+}
+
+.btn-primary:hover,
+.share-btn:hover {
+  background-color: var(--hover-green);
+  box-shadow: 0 4px 4px var(--shadow-green);
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-secondary,
+.btn-inactive {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 139px;
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid rgba(48, 48, 48, 0.5);
+  border-radius: 40px;
+  background-color: transparent;
+  color: var(--gray);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, text-shadow 200ms ease;
+}
+
+.btn-secondary:hover,
+.btn-inactive:hover {
+  border-color: var(--primary-green);
+  background-color: var(--primary-green);
+  color: var(--primary-yellow);
+  box-shadow: 0 4px 4px var(--shadow-green);
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+}
