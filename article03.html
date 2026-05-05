@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Griechenland Travel Blog</title>
+
+  <link rel="icon" type="image/png" href="img/global/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Palanquin:wght@400;500;600;700&family=Palanquin+Dark:wght@600;700&display=swap");
+    
+    :root {
+      --green: #4EA487;
+      --brown: #54370D;
+      --yellow: #F1C953;
+      --white: #FFFFFF;
+      --cream: #F8F5EB;
+      --dark: #3D3D3D;
+      --gray: #737373;
+      --green-light: #4EA48733;
+
+      --font-heading: "Arima", serif;
+      --font-body: "Palanquin", sans-serif;
+      --font-display: "Palanquin Dark", sans-serif;
+
+      --container: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      font-family: var(--font-body);
+      font-size: 24px;
+      line-height: 1.2;
+      overflow-x: hidden;
+    }
+
+    img,
+    video,
+    svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .site-header {
+      width: 100%;
+      height: 128px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      width: min(1440px, calc(100% - 292px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 102px;
+    }
+
+    .logo img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .main-nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 0.8;
+      color: var(--cream);
+      transition: color 180ms ease;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: -3px;
+      right: -3px;
+      bottom: -8px;
+      height: 8px;
+      border-bottom: 3px solid var(--yellow);
+      border-radius: 50%;
+      transform: rotate(4deg) scaleX(0);
+      transform-origin: left center;
+      transition: transform 180ms ease;
+    }
+
+    .main-nav a:hover::after {
+      transform: rotate(4deg) scaleX(1);
+    }
+
+    main {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 93px auto 0;
+      padding-top: 80px;
+      padding-bottom: 88px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 88px;
+    }
+
+    .subtitle {
+      font-family: var(--font-body);
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 40px;
+    }
+
+    .hero-text > p:not(.subtitle) {
+      font-size: 32px;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 40px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      color: var(--brown);
+      font-size: 16px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta i {
+      color: var(--green);
+      font-size: 18px;
+    }
+
+    .author {
+      width: 272px;
+      height: 351px;
+      background: var(--green-light);
+      border-radius: 30px;
+      padding: 24px 24px 20px;
+      text-align: center;
+      color: var(--brown);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .author img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 28px;
+    }
+
+    .author h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+
+    .author strong {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--brown);
+    }
+
+    .author p {
+      width: 220px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: var(--brown);
+      margin: 0;
+    }
+
+    .chart-section {
+      max-width: 900px;
+      margin: auto;
+      padding-top: 80px;
+      padding-bottom: 88px;
+      text-align: center;
+    }
+
+    .chart-section h2 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 88px;
+    }
+
+    .card {
+      width: 640px;
+      height: 436px;
+      margin: 0 auto;
+      border-radius: 53px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18); 
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 53px;
+      display: block; 
+    }
+    
+
+    .share {
+      width: min(493px, 100%);
+      margin: 88px auto 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .share p {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--brown);
+      margin: 0;
+    }
+
+    button {
+      min-width: 139px;
+      height: 48px;
+      border-radius: 40px;
+      padding: 0 24px;
+      border: 1px solid rgba(48, 48, 48, 0.5);
+      background: transparent;
+      color: var(--gray);
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    button:hover {
+      background: var(--green);
+      color: var(--yellow);
+      border-color: var(--green);
+      box-shadow: 0 4px 4px rgba(78, 164, 135, 0.3);
+    }
+
+    .site-footer {
+      width: 100%;
+      min-height: 152px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      padding: 60px 120px;
+      margin-top: 0;
+    }
+
+    .footer-inner {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .footer-copy {
+      color: var(--white);
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      color: var(--yellow);
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 767px) {
+      body {
+        font-size: 16px;
+        padding-bottom: 88px;
+      }
+
+      .site-header {
+        height: auto;
+        padding: 20px 0;
+      }
+
+      .header-inner {
+        width: calc(100% - 32px);
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-nav {
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .main-nav a {
+        font-size: 20px;
+      }
+
+      main {
+        width: min(345px, calc(100% - 30px));
+        margin-top: 40px;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 1;
+      }
+
+      .hero-text > p:not(.subtitle) {
+        font-size: 18px;
+        margin-bottom: 24px;
+      }
+
+      p {
+        font-size: 16px;
+        color: var(--brown);
+      }
+
+      .meta {
+        gap: 8px 16px;
+        font-size: 16px;
+      }
+
+      .author {
+        width: 100%;
+        height: auto;
+        min-height: 328px;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .site-footer {
+        min-height: 134px;
+        padding: 30px 24px;
+      }
+
+      .footer-inner {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html" aria-label="Zur Startseite">
+      <img src="img/global/logo-circle.png" alt="Athen Travel Blog Logo">
+    </a>
+
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="article01.html">Blog</a>
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="subtitle">Griechenlands Hauptstadt voller Möglichkeiten</p>
+
+      <h1>Athen entdecken: Aktivitäten, Reisezeit und Kosten im Überblick</h1>
+
+      <p>
+        Athen ist eine Stadt, die Besucher mit ihrer Vielfalt begeistert. Neben beeindruckenden historischen Sehenswürdigkeiten bietet die griechische Hauptstadt zahlreiche Freizeitmöglichkeiten und ein lebendiges Stadtleben. Ob Kultur, Shopping, kulinarische Erlebnisse oder entspannte Stunden am Meer – Athen ist ein Reiseziel, das für jeden etwas bereithält.
+      </p>
+
+      <div class="meta">
+        <span><i class="bi bi-calendar"></i>Datum: 26.01.2026</span>
+        <span><i class="bi bi-eyeglasses"></i>Lesezeit: 6 min.</span>
+        <span><i class="bi bi-eye"></i>Lesen: 164</span>
+        <span><i class="bi bi-share"></i>Teilen: 18</span>
+      </div>
+    </div>
+
+    <aside class="author">
+      <img src="img/global/author.jpg" alt="Autor Thomas Müller">
+      <h3>Thomas Müller</h3>
+      <strong>Autor</strong>
+      <p>
+        Reisen bedeutet für mich, neue Orte zu entdecken und unterschiedliche Kulturen kennenzulernen. Seit vielen Jahren erkunde ich Städte in Europa und teile meine Erfahrungen in diesem Blog.
+      </p>
+    </aside>
+  </section>
+
+  <p>
+    Die beste Reisezeit für Athen hängt von den persönlichen Vorlieben ab. Viele Besucher reisen im Frühling oder Herbst, da die Temperaturen in diesen Monaten angenehm sind und sich die Stadt ideal für Besichtigungen eignet. Im Sommer kann es sehr heiß werden, weshalb Aktivitäten häufig am Morgen oder am Abend stattfinden. Eine gute Planung hilft dabei, den Aufenthalt entspannter zu gestalten.
+  </p>
+
+  <section class="chart-section">
+    <h2>Reisezeit und Wetter in Athen</h2>
+
+    <div class="card">
+      <img src="img/article03/diagramm_travel.png" alt="Rain periods chart">
+    </div>
+  </section>
+
+  <p>
+    Regen fällt in Griechenland hauptsächlich in den Wintermonaten. Die Sommerzeit ist dagegen meist trocken und sonnig. Besucher sollten daher je nach Jahreszeit passende Kleidung einpacken und ihre Aktivitäten entsprechend planen. So lässt sich der Aufenthalt in Athen optimal genießen.
+  </p>
+
+  <section class="share">
+    <p>
+      Folge mir für weitere spannende Inhalte und teile den Artikel mit deinen Freunden!
+    </p>
+
+    <button>↗ Share</button>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      © 2026 Athen Travel Blog
+    </div>
+
+    <div class="footer-links">
+      <a href="imprint.html">Imprint</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+
+    <div class="footer-socials" aria-label="Social Media Links">
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
