@@ -119,8 +119,8 @@
     main {
       width: min(var(--container), calc(100% - 48px));
       margin: 0 auto;
-      padding-top: 80px; 
-      padding-bottom: 88px; 
+      padding-top: 80px;
+      padding-bottom: 88px;
     }
 
     .hero {
@@ -183,7 +183,7 @@
 
     .author {
       width: 272px;
-      height: 351px;
+      min-height: 351px;
       background: var(--green-light);
       border-radius: 30px;
       padding: 24px 24px 20px;
@@ -219,7 +219,7 @@
     }
 
     .author p {
-      width: 220px;
+      width: 100%;
       font-size: 14px;
       line-height: 1.35;
       color: var(--brown);
@@ -258,7 +258,6 @@
       z-index: 2;
       pointer-events: none;
     }
-
 
     .play-button::after {
       content: "";
@@ -320,7 +319,7 @@
 
     .share {
       width: min(493px, 100%);
-      margin: 0 auto ;
+      margin: 0 auto;
       padding-top: 80px;
       padding-bottom: 88px;
       text-align: center;
@@ -328,10 +327,6 @@
       flex-direction: column;
       gap: 48px;
       align-items: center;
-    }
-
-    .spacing {
-      padding-top: 0px;
     }
 
     .share p {
@@ -371,7 +366,6 @@
       display: flex;
       align-items: center;
       padding: 60px 120px;
-      margin-top: 0;
     }
 
     .footer-inner {
@@ -411,30 +405,170 @@
     .footer-socials a {
       color: var(--yellow);
       font-size: 22px;
-      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: contents;
+    }
+
+    .mobile-bottom-nav {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      body {
+        font-size: 20px;
+      }
+
+      .site-header {
+        height: auto;
+        padding: 28px 0;
+      }
+
+      .header-inner {
+        width: calc(100% - 64px);
+        gap: 56px;
+        justify-content: space-between;
+      }
+
+      .main-nav {
+        gap: 36px;
+      }
+
+      .main-nav a {
+        font-size: 22px;
+      }
+
+      main {
+        width: calc(100% - 64px);
+        padding-top: 64px;
+        padding-bottom: 72px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr 250px;
+        gap: 28px;
+        margin-bottom: 64px;
+      }
+
+      .subtitle {
+        font-size: 32px;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      .hero-text > p:not(.subtitle) {
+        font-size: 26px;
+      }
+
+      p,
+      ul {
+        font-size: 21px;
+      }
+
+      .meta {
+        gap: 16px 24px;
+      }
+
+      .author {
+        width: 250px;
+      }
+
+      .video-section {
+        padding-top: 56px;
+        padding-bottom: 64px;
+      }
+
+      .video-box {
+        width: 100%;
+        border-radius: 40px;
+      }
+
+      .video-box video {
+        border-radius: 40px;
+      }
+
+      .play-button {
+        width: 96px;
+        height: 96px;
+      }
+
+      .play-button::after {
+        border-left-width: 24px;
+        border-top-width: 15px;
+        border-bottom-width: 15px;
+      }
+
+      ul {
+        margin-bottom: 64px;
+      }
+
+      .pro-tip ol {
+        font-size: 21px;
+      }
+
+      .site-footer {
+        padding: 48px 48px;
+      }
+
+      .footer-inner {
+        gap: 32px;
+      }
+
+      .footer-links {
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .author {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
     }
 
     @media (max-width: 767px) {
       body {
         font-size: 16px;
-        padding-bottom: 88px;
       }
 
       .site-header {
-        height: auto;
         padding: 20px 0;
       }
 
       .header-inner {
         width: calc(100% - 32px);
-        flex-direction: column;
-        gap: 20px;
+      }
+
+      .logo img {
+        width: 64px;
+        height: 64px;
       }
 
       .main-nav {
-        gap: 24px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 20px;
       }
 
       .main-nav a {
@@ -443,12 +577,11 @@
 
       main {
         width: min(345px, calc(100% - 30px));
-        margin-top: 40px;
+        padding-top: 40px;
+        padding-bottom: 56px;
       }
 
       .hero {
-        display: flex;
-        flex-direction: column;
         gap: 24px;
         margin-bottom: 40px;
       }
@@ -471,6 +604,7 @@
       ul {
         font-size: 16px;
         color: var(--brown);
+        margin-bottom: 32px;
       }
 
       .meta {
@@ -480,12 +614,40 @@
 
       .author {
         width: 100%;
-        height: auto;
-        min-height: 328px;
+        min-height: auto;
+        padding: 24px 20px;
       }
 
-      .video-box {
+      .author img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+      }
+
+      .video-section {
+        padding-top: 32px;
+        padding-bottom: 48px;
+      }
+
+      .video-box,
+      .video-box video {
         border-radius: 30px;
+      }
+
+      .play-button {
+        width: 72px;
+        height: 72px;
+      }
+
+      .play-button::after {
+        border-left-width: 18px;
+        border-top-width: 11px;
+        border-bottom-width: 11px;
+      }
+
+      ul {
+        margin-left: 20px;
+        margin-bottom: 48px;
       }
 
       .pro-tip {
@@ -498,29 +660,132 @@
         top: -10px;
       }
 
+      .label img {
+        width: 180px;
+      }
+
       .pro-tip ol {
         min-height: 238px;
-        padding: 24px 16px 24px 36px;
+        padding: 32px 16px 24px 36px;
         font-size: 16px;
         color: var(--brown);
       }
 
+      .share {
+        padding-top: 56px;
+        padding-bottom: 56px;
+        gap: 32px;
+      }
+
+      .share p {
+        font-size: 22px;
+      }
+
+      button {
+        font-size: 22px;
+      }
+
       .site-footer {
+        position: relative;
+        width: 100%;
+        height: 134px;
         min-height: 134px;
-        padding: 30px 24px;
+        padding: 24px 36px;
+        background: #4EA487;
+        display: flex;
+        align-items: stretch;
       }
 
       .footer-inner {
         width: 100%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 24px;
+        height: 100%;
+        margin: 0;
+        position: relative;
+        display: block;
+        text-align: left;
       }
 
       .footer-links {
+        display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
+      }
+
+      .footer-links a {
+        font-size: 16px;
+        color: var(--white);
+      }
+
+      .footer-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .footer-copy {
+        font-size: 14px;
+        color: var(--white);
+        white-space: nowrap;
+      }
+
+      .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .footer-socials a {
+        font-size: 22px;
+        color: var(--yellow);
+      }
+
+      .mobile-bottom-nav {
+        width: 100%;
+        height: 88px;
+        background: var(--yellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 52px;
+      }
+
+      .mobile-bottom-nav a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-bottom-nav img {
+        width: 31px;
+        height: 34px;
+        object-fit: contain;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .main-nav {
+        gap: 16px;
+      }
+
+      .main-nav a {
+        font-size: 18px;
+      }
+
+      .label img {
+        width: 160px;
       }
     }
   </style>
@@ -577,15 +842,13 @@
   </p>
 
   <section class="video-section">
-  <div class="video-box">
-
+    <div class="video-box">
       <video controls poster="video/video-poster.jpg" tabindex="0">
-      <source src="video/article02-video.mp4" type="video/mp4">
-  </video>
+        <source src="video/article02-video.mp4" type="video/mp4">
+      </video>
 
-<div class="play-button"></div>
-
-  </div>
+      <div class="play-button"></div>
+    </div>
   </section>
 
   <p>
@@ -631,23 +894,45 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-copy">
-      © 2026 Athen Travel Blog
-    </div>
 
     <div class="footer-links">
       <a href="imprint.html">Imprint</a>
       <a href="privacy.html">Privacy</a>
     </div>
 
-    <div class="footer-socials" aria-label="Social Media Links">
-      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-      <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2026 Athen Travel Blog
+      </div>
+
+      <div class="footer-socials" aria-label="Social Media Links">
+        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      </div>
     </div>
+
   </div>
 </footer>
+
+<nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+  <a href="index.html" aria-label="Home">
+    <img src="img/Home.png" alt="Home">
+  </a>
+
+  <a href="article01.html" aria-label="Blog">
+    <img src="img/rocket_launch.png" alt="Blog">
+  </a>
+
+  <a href="imprint.html" aria-label="Imprint">
+    <img src="img/live_help.png" alt="Imprint">
+  </a>
+
+  <a href="privacy.html" aria-label="Privacy">
+    <img src="img/person_pin.png" alt="Privacy">
+  </a>
+</nav>
 
 </body>
 </html>
