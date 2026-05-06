@@ -126,21 +126,22 @@
         }
         
         main {
-            width: min(var(--container), calc(100% - 48px));
-            margin: 0 auto;
             padding-top: 80px;
             padding-bottom: 88px;
             padding-left: 118px;
             padding-right: 118px;
-            ;
+            display: flex;
+            flex-direction: column;
+            gap: 88px;
         }
         
         .hero {
-            display: grid;
+            display: flex;
             grid-template-columns: 1fr 272px;
             gap: 32px;
             align-items: start;
-            margin-bottom: 88px;
+            margin: 0 auto;
+            max-width: 1440px;
         }
         
         .subtitle {
@@ -245,7 +246,6 @@
         .chart-section {
             max-width: 900px;
             margin: 0 auto;
-            padding: 80px 0 88px;
             text-align: center;
         }
         
@@ -348,6 +348,8 @@
         .diagram-container {
             display: flex;
             gap: 80px;
+            margin: 0 auto;
+            max-width: 1440px;
         }
         
         .stats-area,
@@ -447,7 +449,7 @@
             display: none;
         }
         
-        :root {
+         :root {
             --primary-green: #4EA487;
             --primary-yellow: #F1C953;
             --secondary-brown: #54370D;
@@ -542,7 +544,18 @@
             text-decoration: none;
         }
         
-        RESPONSIVE:
+        .d-flex {
+            display: flex;
+            margin: 0 auto;
+            max-width: 1440px;
+        }
+        
+        .d-flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        RESPONSIVE :
         /* Tablet */
         
         @media (min-width: 501px) and (max-width: 1439px) {
@@ -796,12 +809,14 @@
             </aside>
         </section>
 
-        <p>
-            Die beste Reisezeit für Athen hängt von den persönlichen Vorlieben ab. Viele Besucher reisen im Frühling oder Herbst, da die Temperaturen in diesen Monaten angenehm sind und sich die Stadt ideal für Besichtigungen eignet. Im Sommer kann es sehr heiß werden,
-            weshalb Aktivitäten häufig am Morgen oder am Abend stattfinden. Eine gute Planung hilft dabei, den Aufenthalt entspannter zu gestalten.
-        </p>
+        <div class="d-flex">
+            <p>
+                Die beste Reisezeit für Athen hängt von den persönlichen Vorlieben ab. Viele Besucher reisen im Frühling oder Herbst, da die Temperaturen in diesen Monaten angenehm sind und sich die Stadt ideal für Besichtigungen eignet. Im Sommer kann es sehr heiß werden,
+                weshalb Aktivitäten häufig am Morgen oder am Abend stattfinden. Eine gute Planung hilft dabei, den Aufenthalt entspannter zu gestalten.
+            </p>
+        </div>
 
-        <section class="chart-section">
+        <section class="chart-section d-flex-col">
             <h2>Reisezeit und Wetter in Athen</h2>
 
             <div class="card">
@@ -809,7 +824,7 @@
             </div>
         </section>
 
-        <p>
+        <p class="d-flex">
             Regen fällt in Griechenland hauptsächlich in den Wintermonaten. Die Sommerzeit ist dagegen meist trocken und sonnig. Besucher sollten daher je nach Jahreszeit passende Kleidung einpacken und ihre Aktivitäten entsprechend planen. So lässt sich der Aufenthalt
             in Athen optimal genießen.
         </p>
@@ -828,12 +843,12 @@
                 </div>
             </div>
 
-            <p>Ein Urlaub in Griechenland vereint traumhafte Strände, faszinierende Kultur, mediterrane Kulinarik und beeindruckende Natur zu einem unvergesslichen Reiseerlebnis. Das Land begeistert mit seiner einzigartigen Mischung aus antiker Geschichte
-                und modernem Inselleben. Besucher können weltberühmte Sehenswürdigkeiten entdecken, durch malerische Altstädte schlendern und gleichzeitig das entspannte Lebensgefühl am Mittelmeer genießen. Besonders die griechischen Inseln mit ihren
-                weißen Häusern, blauen Kuppeln und kristallklarem Wasser schaffen eine Atmosphäre, die Erholung und Abenteuer perfekt miteinander verbindet.</p>
+
 
         </section>
-
+        <p class="d-flex">Ein Urlaub in Griechenland vereint traumhafte Strände, faszinierende Kultur, mediterrane Kulinarik und beeindruckende Natur zu einem unvergesslichen Reiseerlebnis. Das Land begeistert mit seiner einzigartigen Mischung aus antiker Geschichte und
+            modernem Inselleben. Besucher können weltberühmte Sehenswürdigkeiten entdecken, durch malerische Altstädte schlendern und gleichzeitig das entspannte Lebensgefühl am Mittelmeer genießen. Besonders die griechischen Inseln mit ihren weißen Häusern,
+            blauen Kuppeln und kristallklarem Wasser schaffen eine Atmosphäre, die Erholung und Abenteuer perfekt miteinander verbindet.</p>
         <div class="share-section">
             <p>Follow me for more content like this, and share the article with your friends!</p>
             <img src="./img/Vector 12.png" alt="arrow" class="share-arrow">
