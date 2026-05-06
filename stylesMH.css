@@ -768,9 +768,6 @@ RESPONSIVE:
 /* Mobile */
 
 @media (max-width: 500px) {
-    body {
-        padding-bottom: 88px;
-    }
     .site-footer {
         min-height: 134px;
         margin-top: 80px;

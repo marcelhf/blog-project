@@ -47,13 +47,6 @@
             overflow-x: hidden;
         }
         
-        img,
-        video,
-        svg {
-            max-width: 100%;
-            display: block;
-        }
-        
         a {
             color: inherit;
             text-decoration: none;
@@ -357,6 +350,8 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
+            justify-content: center;
+            align-items: center;
         }
         
         .stats-area,
@@ -386,29 +381,13 @@
             height: 48px;
         }
         
-        .share-btn {
-            display: flex;
-            background-color: #4EA487;
-            justify-content: center;
-            align-items: center;
-            color: #F1C953;
-            border-radius: 40px;
-            border: none;
-            font-size: 24px;
-            font-family: "arima";
-            font-weight: 700;
-            padding: 0 24px;
-            width: 158px;
-            height: 48px;
-        }
-        
         .share-btn:hover {
-            background-color: transparen;
+            background-color: transparent;
             cursor: pointer;
         }
         
         .share-btn:active .share-btn-normal {
-            background-color: transparent;
+            background-color: transparen;
             display: none;
         }
         
@@ -548,11 +527,13 @@
             display: flex;
             margin: 0 auto;
             max-width: 1440px;
+            justify-content: center;
         }
         
         .d-flex-col {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         
         RESPONSIVE :
@@ -685,9 +666,7 @@
                     font-size: 20px;
                 }
                 main {
-                    width: min(345px, calc(100% - 30px));
                     padding-top: 24px;
-                    ;
                     padding-left: 15px;
                     padding-right: 15px;
                 }
@@ -754,6 +733,7 @@
                 .diagram {
                     width: 343px;
                     height: 311px;
+                    box-shadow: 0 2px 2px -2px gray;
                 }
                 .main-nav {
                     display: none;
