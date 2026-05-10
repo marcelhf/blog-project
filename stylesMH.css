@@ -359,6 +359,10 @@ h1 {
     position: relative;
 }
 
+.share-section p {
+    font-family: "arima";
+}
+
 .share-symbol {
     height: 32px;
     width: 32px;
