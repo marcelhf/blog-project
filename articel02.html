@@ -21,8 +21,12 @@
   --green-light: #4EA48733;
   --primary-green: #4EA487;
   --primary-yellow: #F1C953;
+  --secondary-brown: #54370D;
   --font-heading: "Arima", serif;
   --font-body: "Palanquin", sans-serif;
+  --site-width: 1440px;
+  --content-width: 1201px;
+  --footer-width: 1200px;
   --frame: 1440px;
 }
 
@@ -65,8 +69,10 @@ a {
 }
 
 .header-inner {
-  width: min(var(--frame), calc(100% - 48px));
+  width: min(100%, var(--site-width));
+  height: 72px;
   margin: 0 auto;
+  padding: 0 146px;
   display: flex;
   align-items: center;
   gap: 102px;
@@ -86,10 +92,15 @@ a {
 
 .main-nav a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 700;
+  line-height: 0.8;
   color: var(--cream);
+  transition: color 180ms ease;
 }
 
 .main-nav a::after {
@@ -111,18 +122,31 @@ a {
 }
 
 main {
-  width: min(var(--frame), calc(100% - 48px));
+  width: min(100%, var(--site-width));
   margin: 0 auto;
-  padding-top: 88px;
-  padding-bottom: 56px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 119px;
+  padding-right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 272px;
-  gap: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
   align-items: start;
-  margin-bottom: 48px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.hero-text {
+  width: 902px;
+  max-width: 100%;
 }
 
 .subtitle {
@@ -144,12 +168,14 @@ h1 {
 p {
   font-size: 24px;
   color: var(--dark);
-  margin-bottom: 40px;
+  margin: 0;
 }
 
 .hero-text > p:not(.subtitle) {
-  font-size: 32px;
+  font-size: 28px;
+  line-height: 1.1;
   color: var(--brown);
+  margin-bottom: 40px;
 }
 
 .meta {
@@ -173,47 +199,60 @@ p {
 
 .author {
   width: 272px;
-  min-height: 351px;
+  height: 389px;
   background: var(--green-light);
   border-radius: 30px;
-  padding: 24px 24px 20px;
+  padding: 16px;
   text-align: center;
   color: var(--brown);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 .author img {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 28px;
 }
 
 .author h3 {
   font-family: var(--font-heading);
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .author strong {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .author p {
-  font-size: 14px;
-  line-height: 1.35;
+  width: 240px;
+  font-size: 16px;
+  line-height: 1.2;
   color: var(--brown);
   margin: 0;
 }
 
 .video-section {
-  padding-top: 80px;
-  padding-bottom: 88px;
+  width: 100%;
+  padding: 0;
+}
+
+.article-body {
+  width: 100%;
+  max-width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .video-box {
@@ -265,16 +304,20 @@ p {
 
 ul {
   margin-left: 48px;
-  margin-bottom: 48px;
   font-size: 24px;
   color: var(--dark);
+  width: 100%;
 }
 
 .pro-share-wrapper {
   width: 100%;
+  max-width: 1134px;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-bottom: 48px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
 }
 
 .padding-center {
@@ -283,30 +326,31 @@ ul {
 }
 
 .pro-tipps-section {
+  width: min(1083px, calc(100% - 51px));
+  min-height: 195px;
   position: relative;
   background-color: var(--green-light);
   border-radius: 30px;
-  padding: 70px 60px 58px;
-  margin-top: 40px;
-  margin-bottom: 80px;
+  padding: 26px 16px 24px;
+  margin: 65.55px auto 0;
 }
 
 .pro-tipps {
   background-color: var(--green);
-  width: 195.92px;
+  width: 196px;
   height: 66px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--yellow);
   font-size: 28px;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   border-radius: 10px;
   transform: rotate(-13.67deg);
   position: absolute;
-  top: -14px;
-  left: -18px;
+  top: -71.44px;
+  left: -25.5px;
   margin: 0;
   gap: 8px;
 }
@@ -322,6 +366,7 @@ ul {
   color: var(--dark);
   margin-left: 32px;
   margin-bottom: 0;
+  max-width: 1051px;
 }
 
 .link-green {
@@ -330,115 +375,87 @@ ul {
 }
 
 .share-section {
-  width: 493px;
-  max-width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 48px;
-  font-family: var(--font-heading);
-  text-align: center;
-  position: relative;
-}
-
-.share-section p {
-  width: 493px;
-  max-width: 100%;
+  max-width: 493px;
+  margin: 0 auto;
   font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 500;
-  line-height: 120%;
-  color: var(--brown);
-  margin: 0;
+  text-align: center;
+  position: relative;
 }
 
 .share-arrow {
   position: absolute;
   bottom: 10px;
   left: 1px;
-  width: 106.9px;
-  height: auto;
 }
 
 .share-arrow-mobile {
   display: none;
 }
 
-.share-content {
-  position: relative;
+.share-btn {
   display: flex;
+  background-color: var(--green);
   justify-content: center;
   align-items: center;
-}
-
-.share-dropdown {
-  position: relative;
-}
-
-.share-btn {
+  color: var(--yellow);
+  border-radius: 40px;
+  border: none;
+  font-size: 24px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0 24px;
   width: 158px;
   height: 48px;
-  border: none;
-  background: transparent;
   cursor: pointer;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
 }
 
-.share-btn::-webkit-details-marker {
-  display: none;
+.share-btn:hover {
+  background-color: transparent;
 }
 
 .share-btn img {
+  display: block;
+  max-width: none;
+}
+
+.share-btn-normal {
   width: 158px;
   height: 48px;
-  display: block;
 }
 
-.share-menu {
-  display: none;
-  position: absolute;
-  top: 58px;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 150px;
-  background: var(--white);
-  border-radius: 14px;
-  padding: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-  z-index: 50;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
+.share-btn-active {
+  display: none !important;
+  width: 273px;
+  height: 54px;
 }
 
-.share-dropdown[open] .share-menu {
-  display: flex;
+.share-btn:active > .share-btn-normal {
+  background-color: transparent;
+  display: none !important;
 }
 
-.share-menu a {
-  color: var(--green);
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 600;
-  white-space: nowrap;
+.share-btn:active .share-btn-active {
+  display: block !important;
 }
 
 .site-footer {
   width: 100%;
   min-height: 152px;
-  padding: 60px 0;
-  background: var(--green);
+  margin-top: 120px;
+  padding: 60px 120px;
+  background: var(--primary-green);
   display: flex;
   align-items: center;
 }
 
 .footer-inner {
-  width: min(var(--frame), calc(100% - 48px));
+  width: min(var(--footer-width), 100%);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -446,25 +463,35 @@ ul {
   gap: 48px;
 }
 
-.footer-copy,
-.footer-links a {
+.footer-copy {
   color: var(--white);
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 72px;
+}
+
+.footer-links a {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .footer-socials {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
 .footer-socials a {
-  color: var(--yellow);
+  color: var(--primary-yellow);
   font-size: 22px;
+  line-height: 1;
 }
 
 /* MOBILE MENU */
@@ -479,38 +506,56 @@ ul {
 }
 
 /* TABLET */
-@media (max-width: 1100px) {
+@media (min-width: 501px) and (max-width: 1439px) {
   .header-inner {
-    gap: 48px;
+    width: 100%;
+    padding-left: clamp(32px, 10.14vw, 146px);
+    padding-right: clamp(32px, 10.14vw, 146px);
+    gap: clamp(32px, 7vw, 102px);
   }
 
   .main-nav {
-    gap: 32px;
+    gap: clamp(24px, 5vw, 72px);
   }
 
   main {
-    width: calc(100% - 48px);
+    padding-left: clamp(32px, 8.26vw, 119px);
+    padding-right: clamp(32px, 8.33vw, 120px);
   }
 
+  .site-footer {
+    padding-left: clamp(32px, 8.33vw, 120px);
+    padding-right: clamp(32px, 8.33vw, 120px);
+  }
+
+  .footer-inner {
+    gap: clamp(24px, 3.33vw, 48px);
+  }
+
+  .footer-links {
+    gap: clamp(24px, 5vw, 72px);
+  }
+}
+
+/* KLEINE TABLETS */
+@media (min-width: 501px) and (max-width: 760px) {
   .hero {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .author {
     width: 100%;
-    min-height: auto;
+    height: auto;
   }
 
-  h1 {
-    font-size: 56px;
+  .footer-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
-  .subtitle {
-    font-size: 34px;
-  }
-
-  .hero-text > p:not(.subtitle) {
-    font-size: 26px;
+  .footer-links {
+    justify-content: center;
   }
 }
 
@@ -531,13 +576,17 @@ ul {
   .header-inner {
     width: 100%;
     height: 60px;
+    max-width: none;
+    padding: 0;
     justify-content: center;
     gap: 0;
   }
 
+  .logo,
   .logo img {
     width: 56px;
     height: 56px;
+    flex-basis: 56px;
   }
 
   .main-nav {
@@ -545,24 +594,31 @@ ul {
   }
 
   main {
-    width: calc(100% - 30px);
-    padding-top: 32px;
-    padding-bottom: 32px;
+    width: 345px;
+    max-width: calc(100% - 30px);
+    padding: 24px 0 0;
+    gap: 88px;
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-text {
+    width: 100%;
   }
 
   h1 {
     font-size: 40px;
-    line-height: 1.1;
+    line-height: 1;
+    margin-bottom: 8px;
   }
 
   .subtitle {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 8px;
   }
 
   .hero-text > p:not(.subtitle),
@@ -572,32 +628,63 @@ ul {
     color: var(--brown);
   }
 
-  p {
-    margin-bottom: 32px;
+  .hero-text > p:not(.subtitle) {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 24px;
   }
 
   ul {
-    margin-left: 24px;
-    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 25px;
   }
 
   .meta {
-    gap: 16px;
+    gap: 8px 16px;
     font-size: 14px;
   }
 
+  .author {
+    width: 345px;
+    max-width: 100%;
+    height: 328px;
+    align-self: center;
+    padding: 16px 8px;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .author h3,
+  .author strong {
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .author p {
+    width: min(329px, 100%);
+    font-size: 16px;
+    text-align: center;
+  }
+
   .video-section {
-    padding-top: 32px;
-    padding-bottom: 40px;
+    padding: 0;
+  }
+
+  .article-body {
+    max-width: 345px;
+    gap: 24px;
   }
 
   .video-box {
     width: 100%;
-    border-radius: 28px;
+    aspect-ratio: 345 / 193;
+    border-radius: 30px;
   }
 
   .video-box video {
-    border-radius: 28px;
+    border-radius: 30px;
   }
 
   .play-button {
@@ -609,35 +696,50 @@ ul {
     padding-right: 0;
   }
 
+  .pro-share-wrapper {
+    max-width: 345px;
+    gap: 32px;
+    margin-top: 0;
+  }
+
   .pro-tipps-section {
-    margin-top: 40px;
-    margin-bottom: 64px;
-    padding: 70px 18px 40px;
+    width: 100%;
+    max-width: 343px;
+    min-height: 0;
+    margin-top: 71px;
+    padding: 28px 24px 44px;
   }
 
   .pro-tipps {
-    width: 195px;
+    width: 196px;
     height: 66px;
-    font-size: 24px;
-    top: -8px;
-    left: 6px;
+    font-size: 28px;
+    top: -62px;
+    left: -4px;
   }
 
   .pro-tipps-section ol {
     font-size: 16px;
-    margin-left: 20px;
+    width: 100%;
+    max-width: 295px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 0;
+    box-sizing: border-box;
   }
 
   .share-section {
-    width: 100%;
-    max-width: 345px;
-    gap: 40px;
+    max-width: 343px;
+    gap: 88px;
   }
 
   .share-section p {
-    width: 100%;
-    max-width: 345px;
+    font-family: var(--font-heading);
+    font-weight: 500;
     font-size: 18px;
+    line-height: 1.2;
+    color: var(--brown);
+    text-align: center;
   }
 
   .share-arrow {
@@ -647,15 +749,8 @@ ul {
   .share-arrow-mobile {
     display: block;
     position: absolute;
-    bottom: 48px;
-    left: 18px;
-    width: 70px;
-  }
-
-  .share-btn,
-  .share-btn img {
-    width: 140px;
-    height: 44px;
+    bottom: 50px;
+    left: 5px;
   }
 
   .site-footer {
@@ -688,23 +783,34 @@ ul {
     grid-column: 1;
     grid-row: 2;
     font-size: 16px;
+    text-align: left;
+  }
+
+  .footer-links a {
+    font-size: 16px;
+    text-align: left;
   }
 
   .footer-socials {
     grid-column: 2;
     grid-row: 1 / 3;
-    justify-self: end;
     align-self: end;
+    justify-self: end;
+    gap: 16px;
+  }
+
+  .footer-socials a {
+    font-size: 24px;
   }
 
   .mobile-menu {
     position: fixed;
     left: 0;
     bottom: 0;
-    z-index: 999999;
+    z-index: 20;
     width: 100%;
     height: 88px;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px 25px;
@@ -735,25 +841,21 @@ ul {
 
 /* EXTRA KLEIN BIS 368PX */
 @media (max-width: 368px) {
-  main {
-    width: calc(100% - 24px);
-  }
-
   h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .subtitle {
-    font-size: 21px;
+    font-size: 18px;
   }
 
-  .mobile-menu {
-    display: flex !important;
+  .meta {
+    font-size: 12px;
   }
 
   .mobile-menu-inner {
-    width: 304px;
-    max-width: 100%;
+    width: 100%;
+    gap: 20px;
   }
 }
   </style>
@@ -803,34 +905,36 @@ ul {
     </aside>
   </section>
 
-  <p>
-    Athen ist eine Stadt, die Geschichte und modernes Leben auf einzigartige Weise verbindet. Von der berühmten Akropolis bis zu den lebhaften Straßen der Altstadt gibt es zahlreiche Orte zu entdecken.
-  </p>
+  <section class="article-body">
+    <p>
+      Athen ist eine Stadt, die Geschichte und modernes Leben auf einzigartige Weise verbindet. Von der berühmten Akropolis bis zu den lebhaften Straßen der Altstadt gibt es zahlreiche Orte zu entdecken.
+    </p>
 
-  <section class="video-section">
-    <div class="video-box">
-      <video controls poster="video/video-poster.jpg">
-        <source src="video/article02-video.mp4" type="video/mp4">
-      </video>
-      <div class="play-button"></div>
-    </div>
+    <section class="video-section">
+      <div class="video-box">
+        <video controls poster="video/video-poster.jpg">
+          <source src="video/article02-video.mp4" type="video/mp4">
+        </video>
+        <div class="play-button"></div>
+      </div>
+    </section>
+
+    <p>
+      Ein Besuch in Athen ist ein besonderes Erlebnis für Reisende jeden Alters. Neben den bekannten Sehenswürdigkeiten gibt es viele Möglichkeiten, die Stadt aktiv zu erkunden und neue Eindrücke zu sammeln.
+    </p>
+
+    <p>Praktische Tipps für einen angenehmen Aufenthalt in Athen:</p>
+
+    <ul>
+      <li>Besuchen Sie die wichtigsten Sehenswürdigkeiten früh am Morgen.</li>
+      <li>Trinken Sie ausreichend Wasser und schützen Sie sich vor der Sonne.</li>
+      <li>Tragen Sie bequeme Schuhe, da viele Wege zu Fuß zurückgelegt werden.</li>
+    </ul>
+
+    <p>
+      Athen ist eine lebendige Stadt mit zahlreichen Möglichkeiten, Neues zu entdecken. Wer seine Reise gut plant und genügend Zeit einplant, kann die historischen Sehenswürdigkeiten genießen.
+    </p>
   </section>
-
-  <p>
-    Ein Besuch in Athen ist ein besonderes Erlebnis für Reisende jeden Alters. Neben den bekannten Sehenswürdigkeiten gibt es viele Möglichkeiten, die Stadt aktiv zu erkunden und neue Eindrücke zu sammeln.
-  </p>
-
-  <p>Praktische Tipps für einen angenehmen Aufenthalt in Athen:</p>
-
-  <ul>
-    <li>Besuchen Sie die wichtigsten Sehenswürdigkeiten früh am Morgen.</li>
-    <li>Trinken Sie ausreichend Wasser und schützen Sie sich vor der Sonne.</li>
-    <li>Tragen Sie bequeme Schuhe, da viele Wege zu Fuß zurückgelegt werden.</li>
-  </ul>
-
-  <p>
-    Athen ist eine lebendige Stadt mit zahlreichen Möglichkeiten, Neues zu entdecken. Wer seine Reise gut plant und genügend Zeit einplant, kann die historischen Sehenswürdigkeiten genießen.
-  </p>
 
   <section class="pro-share-wrapper">
     <div class="padding-center pro-tipps-section">
@@ -839,48 +943,34 @@ ul {
       </p>
 
       <ol>
-        <li>
-          Planen Sie ausreichend Zeit für Pausen ein.
-          <a href="https://www.google.com/" class="link-green">google.com</a>.
-        </li>
-        <li>
-          Tragen Sie bequeme Kleidung und achten Sie auf genügend Wasser.
-        </li>
+        <li>Planen Sie Ihre Ausflüge früh am Morgen, um große Menschenmengen und hohe Temperaturen zu vermeiden. <a href="https://www.google.com/" class="link-green">google.com</a>.</li>
+        <li>Nutzen Sie öffentliche Verkehrsmittel oder Mietroller, um sich schnell und günstig in der Stadt fortzubewegen.</li>
       </ol>
     </div>
 
     <div class="share-section">
-      <p>Follow me for more content like this, and share the article with your friends!</p>
+      <p>Folge mir für weitere spannende Inhalte und teile den Artikel mit deinen Freunden!</p>
 
       <img src="./img/Vector 12.png" alt="arrow" class="share-arrow">
       <img src="./img/Vector16.png" alt="arrow" class="share-arrow-mobile">
 
-      <div class="share-content">
-        <details class="share-dropdown">
-          <summary class="share-btn" aria-label="Artikel teilen">
-            <img src="./img/share-btn.png" alt="Share">
-          </summary>
-
-          <div class="share-menu">
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://deine-domain.de/article02.html" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://wa.me/?text=https://deine-domain.de/article02.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </div>
-        </details>
-      </div>
+      <button class="share-btn"><img src="./img/share-btn.png" alt="" class="share-btn-normal"> <img src="./img/Property 1=share.png" class="share-btn-active"></button>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-copy">© 2026 Athen Travel Blog</div>
+    <div class="footer-copy">
+      © 2026 Athen Travel Blog
+    </div>
 
     <div class="footer-links">
       <a href="imprint.html">Imprint</a>
       <a href="privacy.html">Privacy</a>
     </div>
 
-    <div class="footer-socials">
+    <div class="footer-socials" aria-label="Social Media Links">
       <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
       <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
       <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -894,7 +984,7 @@ ul {
     <a href="index.html" aria-label="Home"><i class="bi bi-house-door-fill"></i></a>
     <a href="#highlights" aria-label="Highlights"><i class="bi bi-rocket-takeoff-fill"></i></a>
     <a href="#faq" aria-label="FAQ"><i class="bi bi-question-circle-fill"></i></a>
-    <a href="#contact" aria-label="Kontakt"><i class="bi bi-person-lines-fill"></i></a>
+    <a href="#contact" aria-label="Contact"><i class="bi bi-person-lines-fill"></i></a>
   </div>
 </nav>
 
