@@ -63,19 +63,24 @@ a {
 .site-header {
   width: 100%;
   height: 128px;
-  background: var(--green);
+  background: var(--primary-green);
   display: flex;
   align-items: center;
 }
 
 .header-inner {
-  width: min(100%, var(--site-width));
-  height: 72px;
+  width: min(var(--site-width), calc(100% - 292px));
   margin: 0 auto;
-  padding: 0 146px;
   display: flex;
   align-items: center;
   gap: 102px;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  display: block;
+  flex: 0 0 72px;
 }
 
 .logo img {
@@ -110,7 +115,7 @@ a {
   right: -3px;
   bottom: -8px;
   height: 8px;
-  border-bottom: 3px solid var(--yellow);
+  border-bottom: 3px solid var(--primary-yellow);
   border-radius: 50%;
   transform: rotate(4deg) scaleX(0);
   transform-origin: left center;
@@ -508,14 +513,23 @@ ul {
 /* TABLET */
 @media (min-width: 501px) and (max-width: 1439px) {
   .header-inner {
-    width: 100%;
-    padding-left: clamp(32px, 10.14vw, 146px);
-    padding-right: clamp(32px, 10.14vw, 146px);
-    gap: clamp(32px, 7vw, 102px);
+    width: calc(100% - clamp(48px, 10vw, 292px));
+    gap: clamp(24px, 7.08vw, 102px);
+  }
+
+  .logo,
+  .logo img {
+    width: clamp(56px, 5vw, 72px);
+    height: clamp(56px, 5vw, 72px);
+    flex-basis: clamp(56px, 5vw, 72px);
   }
 
   .main-nav {
-    gap: clamp(24px, 5vw, 72px);
+    gap: clamp(18px, 5vw, 72px);
+  }
+
+  .main-nav a {
+    font-size: clamp(18px, 1.67vw, 24px);
   }
 
   main {
@@ -569,6 +583,10 @@ ul {
   .site-header {
     height: 70px;
     min-height: 70px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
     padding: 5px 16px;
     justify-content: center;
   }
@@ -577,7 +595,8 @@ ul {
     width: 100%;
     height: 60px;
     max-width: none;
-    padding: 0;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     gap: 0;
   }
@@ -866,7 +885,7 @@ ul {
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="index.html" aria-label="Zur Startseite">
-      <img src="img/global/logo-circle.png" alt="Athen Travel Blog Logo">
+      <img src="img/global/logo-circle.png" alt="Griechenland Travel Blog Logo">
     </a>
 
     <nav class="main-nav" aria-label="Hauptnavigation">
