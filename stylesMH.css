@@ -18,6 +18,7 @@ header {
 
 p {
     margin: 0;
+    font-size: 24px;
 }
 
 a {
@@ -176,6 +177,10 @@ h1 {
     margin: 0;
 }
 
+li {
+    font-size: 24px;
+}
+
 .headlines-main h3 {
     font-family: "palanquin";
     font-weight: 400;
@@ -206,6 +211,10 @@ h1 {
     padding: 16px;
     border-radius: 30px;
     height: max-content;
+}
+
+.author-description p {
+    font-size: 16px;
 }
 
 .author-name {
@@ -562,6 +571,12 @@ footer {
     }
     h1 {
         font-size: 40px;
+    }
+    p {
+        font-size: 16px;
+    }
+    li {
+        font-size: 16px;
     }
     ol {
         padding-left: 25px;
