@@ -566,8 +566,14 @@ footer {
     ol {
         padding-left: 25px;
     }
+    header {
+        padding-left: 0;
+    }
     main {
         padding: 70px 15px;
+    }
+    .top-nav {
+        justify-content: center;
     }
     .top-nav ul {
         display: none
