@@ -634,9 +634,6 @@ footer {
         width: 24px;
         height: 24px;
     }
-    .footer-section {
-        align-items: flex-end;
-    }
     .bottom-menu {
         display: block;
     }
@@ -722,7 +719,6 @@ a {
     width: 100%;
     min-height: 152px;
     margin-top: 0px;
-    padding: 60px 120px;
     background: var(--primary-green);
     display: flex;
     align-items: center;
@@ -786,20 +782,4 @@ a {
 .mobile-menu a {
     color: var(--primary-green);
     line-height: 1;
-}
-
-
-/* Tablet */
-
-@media (min-width: 501px) and (max-width: 1439px) {
-    .site-footer {
-        padding-left: clamp(32px, 8.33vw, 120px);
-        padding-right: clamp(32px, 8.33vw, 120px);
-    }
-    .footer-inner {
-        gap: clamp(24px, 3.33vw, 48px);
-    }
-    .footer-links {
-        gap: clamp(24px, 5vw, 72px);
-    }
 }
