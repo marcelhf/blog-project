@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <style>
-            @import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Palanquin:wght@400;500;600;700&family=Palanquin+Dark:wght@600;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;500;600;700&family=Palanquin:wght@400;500;600;700&family=Palanquin+Dark:wght@600;700&display=swap");
          :root {
             --green: #4EA487;
             --brown: #54370D;
@@ -27,13 +27,13 @@
             --site-width: 1440px;
             --footer-width: 1200px;
         }
-
+        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
@@ -83,7 +83,7 @@
             display: block;
             flex: 0 0 72px;
         }
-
+        
         .logo img {
             width: 72px;
             height: 72px;
@@ -149,7 +149,7 @@
             margin: 0 auto;
             max-width: 1200px;
         }
-
+        
         .hero-text {
             width: 902px;
             max-width: 100%;
@@ -276,7 +276,8 @@
         }
         
         .card {
-            width: 640px;
+            width: 100%;
+            max-width: 640px;
             height: 436px;
             padding: 20px;
             border-radius: 53px;
@@ -389,7 +390,7 @@
             text-align: center;
             margin: 0 0 24px 0;
         }
-
+        
         .costs-area h3 {
             font-family: "Arima", serif;
             font-weight: 600;
@@ -454,7 +455,7 @@
             text-align: center;
             position: relative;
         }
-
+        
         .share-section p {
             color: #54370D;
             font-family: "Arima", serif;
@@ -587,360 +588,307 @@
             flex-direction: column;
             align-items: center;
         }
+        /* RESPONSIVE */
+        /* Tablet */
         
-      /* RESPONSIVE */
-
-/* Tablet */
-@media (min-width: 501px) and (max-width: 1439px) {
-  .header-inner {
-    width: calc(100% - clamp(48px, 10vw, 292px));
-    gap: clamp(24px, 7.08vw, 102px);
-  }
-
-  .logo,
-  .logo img {
-    width: clamp(56px, 5vw, 72px);
-    height: clamp(56px, 5vw, 72px);
-    flex-basis: clamp(56px, 5vw, 72px);
-  }
-
-  .main-nav {
-    gap: clamp(18px, 5vw, 72px);
-  }
-
-  .main-nav a {
-    font-size: clamp(18px, 1.67vw, 24px);
-  }
-
-  main {
-    padding-left: clamp(32px, 8.26vw, 119px);
-    padding-right: clamp(32px, 8.33vw, 120px);
-  }
-
-  .diagram-container {
-    gap: clamp(32px, 5vw, 80px);
-  }
-
-  .diagram {
-    width: min(100%, 519px);
-    height: auto;
-  }
-
-  .site-footer {
-    padding-left: clamp(32px, 8.33vw, 120px);
-    padding-right: clamp(32px, 8.33vw, 120px);
-  }
-
-  .footer-inner {
-    gap: clamp(24px, 3.33vw, 48px);
-  }
-
-  .footer-links {
-    gap: clamp(24px, 5vw, 72px);
-  }
-}
-
-/* Kleine Tablets */
-@media (min-width: 501px) and (max-width: 760px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .author {
-    width: 100%;
-    height: auto;
-  }
-
-  .diagram-container {
-    flex-direction: column;
-  }
-
-  .footer-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .share-section p {
-    font-size: 17px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 500px) {
-  body {
-    font-size: 16px;
-    padding-bottom: 88px;
-  }
-
-  .site-header {
-    height: 70px;
-    min-height: 70px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    box-sizing: border-box;
-    padding: 5px 16px;
-    justify-content: center;
-  }
-
-  .header-inner {
-    width: 100%;
-    height: 60px;
-    max-width: none;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    justify-content: center;
-  }
-
-  .logo,
-  .logo img {
-    width: 56px;
-    height: 56px;
-    flex-basis: 56px;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  main {
-    width: 345px;
-    max-width: calc(100% - 30px);
-    padding: 24px 0 0;
-    gap: 88px;
-  }
-
-  .hero {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  h1 {
-    font-size: 40px;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .subtitle {
-    font-size: 20px;
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-
-  .hero-text > p:not(.subtitle),
-  p {
-    font-size: 16px;
-    color: var(--brown);
-  }
-
-  .hero-text > p:not(.subtitle) {
-    font-size: 18px;
-    line-height: 1.2;
-    margin-bottom: 24px;
-  }
-
-  .meta {
-    gap: 8px 16px;
-    font-size: 14px;
-  }
-
-  .author {
-    width: 345px;
-    max-width: 100%;
-    height: 328px;
-    align-self: center;
-    padding: 16px 8px;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .author h3,
-  .author strong {
-    width: 100%;
-    font-size: 16px;
-    margin: 0;
-    text-align: center;
-  }
-
-  .author p {
-    width: min(329px, 100%);
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .card {
-    width: 100%;
-    height: auto;
-    border-radius: 32px;
-  }
-
-  .chart-section h2,
-  .stats-area h3,
-  .costs-area h3 {
-    font-size: 28px;
-  }
-
-  .diagram-container {
-    flex-direction: column;
-    gap: 64px;
-  }
-
-  .diagram {
-    width: 100%;
-    max-width: 343px;
-    height: auto;
-  }
-
-  .share-arrow {
-    display: none;
-  }
-
-  .share-arrow-mobile {
-    display: block;
-    position: absolute;
-    bottom: 50px;
-    left: 5px;
-  }
-  .share-section p {
-    font-size: 16px;
-  }
-
-  .share-section {
-    max-width: 343px;
-    gap: 88px;
-  }
-
-  .share-section p {
-    font-family: var(--font-heading);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.2;
-    color: var(--brown);
-    text-align: center;
-  }
-
-  .site-footer {
-    min-height: 134px;
-    margin-top: 80px;
-    padding: 30px 24px;
-    align-items: flex-end;
-  }
-
-  .footer-inner {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 147px) minmax(0, 153px);
-    grid-template-rows: auto auto;
-    align-items: end;
-    justify-content: space-between;
-    gap: 8px 44px;
-    text-align: left;
-  }
-
-  .footer-links {
-    grid-column: 1;
-    grid-row: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .footer-copy {
-    grid-column: 1;
-    grid-row: 2;
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .footer-links a {
-    font-size: 16px;
-    text-align: left;
-  }
-
-  .footer-socials {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: end;
-    justify-self: end;
-    gap: 16px;
-  }
-
-  .footer-socials a {
-    font-size: 24px;
-  }
-
-  .mobile-menu {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 20;
-    width: 100%;
-    height: 88px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 25px;
-    background: var(--primary-yellow);
-  }
-
-  .mobile-menu-inner {
-    width: 304px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .mobile-menu a {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-menu i {
-    font-size: 34px;
-    color: var(--primary-green);
-  }
-}
-
-/* Sehr kleine Mobile Ansicht */
-@media (max-width: 368px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .chart-section h2,
-  .stats-area h3,
-  .costs-area h3 {
-    font-size: 24px;
-  }
-
-  .diagram {
-    max-width: 300px;
-  }
-
-  .card {
-    border-radius: 24px;
-    padding: 12px;
-  }
-
-  .meta {
-    font-size: 12px;
-  }
-
-  .mobile-menu-inner {
-    width: 100%;
-    gap: 20px;
-  }
-}
+        @media (min-width: 501px) and (max-width: 1439px) {
+            .header-inner {
+                width: calc(100% - clamp(48px, 10vw, 292px));
+                gap: clamp(24px, 7.08vw, 102px);
+            }
+            .logo,
+            .logo img {
+                width: clamp(56px, 5vw, 72px);
+                height: clamp(56px, 5vw, 72px);
+                flex-basis: clamp(56px, 5vw, 72px);
+            }
+            .main-nav {
+                gap: clamp(18px, 5vw, 72px);
+            }
+            .main-nav a {
+                font-size: clamp(18px, 1.67vw, 24px);
+            }
+            main {
+                padding-left: clamp(32px, 8.26vw, 119px);
+                padding-right: clamp(32px, 8.33vw, 120px);
+            }
+            .diagram-container {
+                gap: clamp(32px, 5vw, 80px);
+            }
+            .diagram {
+                width: min(100%, 519px);
+                height: auto;
+            }
+            .site-footer {
+                padding-left: clamp(32px, 8.33vw, 120px);
+                padding-right: clamp(32px, 8.33vw, 120px);
+            }
+            .footer-inner {
+                gap: clamp(24px, 3.33vw, 48px);
+            }
+            .footer-links {
+                gap: clamp(24px, 5vw, 72px);
+            }
+        }
+        /* Kleine Tablets */
+        
+        @media (min-width: 501px) and (max-width: 760px) {
+            .hero {
+                flex-direction: column;
+            }
+            .author {
+                width: 100%;
+                height: auto;
+            }
+            .diagram-container {
+                flex-direction: column;
+            }
+            .footer-inner {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+            .share-section p {
+                font-size: 17px;
+            }
+        }
+        /* Mobile */
+        
+        @media (max-width: 500px) {
+            body {
+                font-size: 16px;
+                padding-bottom: 88px;
+            }
+            .site-header {
+                height: 70px;
+                min-height: 70px;
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                box-sizing: border-box;
+                padding: 5px 16px;
+                justify-content: center;
+            }
+            .header-inner {
+                width: 100%;
+                height: 60px;
+                max-width: none;
+                flex-direction: row;
+                align-items: center;
+                gap: 0;
+                justify-content: center;
+            }
+            .logo,
+            .logo img {
+                width: 56px;
+                height: 56px;
+                flex-basis: 56px;
+            }
+            .main-nav {
+                display: none;
+            }
+            main {
+                width: 345px;
+                max-width: calc(100% - 30px);
+                padding: 24px 0 0;
+                gap: 88px;
+            }
+            .hero {
+                flex-direction: column;
+                gap: 24px;
+            }
+            h1 {
+                font-size: 40px;
+                line-height: 1;
+                margin-bottom: 8px;
+            }
+            .subtitle {
+                font-size: 20px;
+                line-height: 1.2;
+                margin-bottom: 8px;
+            }
+            .hero-text>p:not(.subtitle),
+            p {
+                font-size: 16px;
+                color: var(--brown);
+            }
+            .hero-text>p:not(.subtitle) {
+                font-size: 18px;
+                line-height: 1.2;
+                margin-bottom: 24px;
+            }
+            .meta {
+                gap: 8px 16px;
+                font-size: 14px;
+            }
+            .author {
+                width: 345px;
+                max-width: 100%;
+                height: 328px;
+                align-self: center;
+                padding: 16px 8px;
+                gap: 16px;
+                text-align: center;
+            }
+            .author h3,
+            .author strong {
+                width: 100%;
+                font-size: 16px;
+                margin: 0;
+                text-align: center;
+            }
+            .author p {
+                width: min(329px, 100%);
+                font-size: 16px;
+                text-align: center;
+            }
+            .card {
+                width: 100%;
+                height: auto;
+                border-radius: 32px;
+            }
+            .chart-section h2,
+            .stats-area h3,
+            .costs-area h3 {
+                font-size: 28px;
+            }
+            .diagram-container {
+                flex-direction: column;
+                gap: 64px;
+            }
+            .diagram {
+                width: 100%;
+                max-width: 343px;
+                height: auto;
+            }
+            .share-arrow {
+                display: none;
+            }
+            .share-arrow-mobile {
+                display: block;
+                position: absolute;
+                bottom: 50px;
+                left: 5px;
+            }
+            .share-section p {
+                font-size: 16px;
+            }
+            .share-section {
+                max-width: 343px;
+                gap: 88px;
+            }
+            .share-section p {
+                font-family: var(--font-heading);
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1.2;
+                color: var(--brown);
+                text-align: center;
+            }
+            .site-footer {
+                min-height: 134px;
+                margin-top: 80px;
+                padding: 30px 24px;
+                align-items: flex-end;
+            }
+            .footer-inner {
+                width: 100%;
+                display: grid;
+                grid-template-columns: minmax(0, 147px) minmax(0, 153px);
+                grid-template-rows: auto auto;
+                align-items: end;
+                justify-content: space-between;
+                gap: 8px 44px;
+                text-align: left;
+            }
+            .footer-links {
+                grid-column: 1;
+                grid-row: 1;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .footer-copy {
+                grid-column: 1;
+                grid-row: 2;
+                font-size: 16px;
+                text-align: left;
+            }
+            .footer-links a {
+                font-size: 16px;
+                text-align: left;
+            }
+            .footer-socials {
+                grid-column: 2;
+                grid-row: 1 / 3;
+                align-self: end;
+                justify-self: end;
+                gap: 16px;
+            }
+            .footer-socials a {
+                font-size: 24px;
+            }
+            .mobile-menu {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                z-index: 20;
+                width: 100%;
+                height: 88px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 24px 25px;
+                background: var(--primary-yellow);
+            }
+            .mobile-menu-inner {
+                width: 304px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .mobile-menu a {
+                width: 40px;
+                height: 40px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-menu i {
+                font-size: 34px;
+                color: var(--primary-green);
+            }
+        }
+        /* Sehr kleine Mobile Ansicht */
+        
+        @media (max-width: 368px) {
+            h1 {
+                font-size: 32px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .chart-section h2,
+            .stats-area h3,
+            .costs-area h3 {
+                font-size: 24px;
+            }
+            .diagram {
+                max-width: 300px;
+            }
+            .card {
+                border-radius: 24px;
+                padding: 12px;
+            }
+            .meta {
+                font-size: 12px;
+            }
+            .mobile-menu-inner {
+                width: 100%;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 
