@@ -572,9 +572,6 @@ footer {
     .top-nav {
         justify-content: center;
     }
-    .top-nav ul {
-        display: none
-    }
     h1 {
         font-size: 40px;
     }
@@ -630,6 +627,12 @@ footer {
     }
     .footer-socials a {
         font-size: 24px;
+    }
+}
+
+@media(max-width: 850px) {
+    .top-nav ul {
+        display: none
     }
 }
 
